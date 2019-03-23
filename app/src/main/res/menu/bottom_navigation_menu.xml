@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/chords"
-        android:icon="@android:drawable/ic_delete"
+        android:icon="@drawable/ic_music_note_black_24dp"
         android:title="@string/bottom_navigation_chord" />
     <item
         android:id="@+id/scale"
-        android:icon="@android:drawable/ic_delete"
+        android:icon="@drawable/ic_reorder_black_24dp"
         android:title="@string/bottom_navigation_scale" />
     <item
         android:id="@+id/songs"
-        android:icon="@android:drawable/ic_delete"
+        android:icon="@drawable/ic_queue_music_black_24dp"
         android:title="@string/bottom_navigation_songs" />
     <item
         android:id="@+id/settings"
-        android:icon="@android:drawable/ic_delete"
+        android:icon="@drawable/ic_settings_black_24dp"
         android:title="@string/bottom_navigation_settings" />
 </menu>
