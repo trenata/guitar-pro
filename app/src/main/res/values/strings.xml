@@ -1,16 +1,24 @@
 <resources>
     <string name="app_name">Guitar Pro</string>
+
     <string-array name="titles">
         <item>Welcome to Guitar Pro!</item>
         <item>The body</item>
         <item>The neck</item>
         <item>The head</item>
     </string-array>
+
     <string-array name="descriptions">
         <item>Let\’s introduce you the key elements of a guitar. The Metal be with you!</item>
         <item>It\’s curvacious. It screams sexy. It\'s… a guitar.</item>
         <item>The neck basically is the section of the guitar that holds your fretboard, strings, and headstock.</item>
         <item>The guitar head is like a real head. Without it, your guitar is basically useless and unplayable.</item>
     </string-array>
+
     <string name="view_pager_button">LET\'S TRY OUT</string>
+
+    <string name="bottom_nav_chords">Chords</string>
+    <string name="bottom_nav_scales">Scales</string>
+    <string name="bottom_nav_songs">Songs</string>
+    <string name="bottom_nav_settings">Settings</string>
 </resources>

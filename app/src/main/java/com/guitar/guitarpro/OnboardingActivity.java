@@ -1,6 +1,8 @@
 package com.guitar.guitarpro;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.rd.PageIndicatorView;
 
@@ -19,6 +21,13 @@ public class OnboardingActivity extends AppCompatActivity {
 
         final PageIndicatorView pageIndicatorView = findViewById(R.id.page_indicator_view);
         pageIndicatorView.setViewPager(viewPager);
+    }
+
+    public void openMainActivity(View view) {
+        Intent intent = new Intent(this,
+                MainActivity.class);
+
+        startActivity(intent);
     }
 }
 
