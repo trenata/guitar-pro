@@ -4,19 +4,19 @@
 
     <item
         android:id="@+id/chords"
-        android:icon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/ic_music_note_black_24dp"
         android:title="@string/bottom_nav_chords" />
     <item
         android:id="@+id/scales"
-        android:icon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/ic_reorder_black_24dp"
         android:title="@string/bottom_nav_scales" />
     <item
         android:id="@+id/songs"
-        android:icon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/ic_queue_music_black_24dp"
         android:title="@string/bottom_nav_songs" />
     <item
         android:id="@+id/settings"
-        android:icon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/ic_settings_black_24dp"
         android:title="@string/bottom_nav_settings" />
 
 </menu>
