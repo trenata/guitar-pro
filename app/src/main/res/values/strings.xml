@@ -13,4 +13,8 @@
         <item>The guitar head is like a real head. Without it, your guitar is basically useless and unplayable.</item>
     </string-array>
     <string name="view_pager_button">LET\'S TRY OUT</string>
+    <string name="bottom_navigation_chord">Chords</string>
+    <string name="bottom_navigation_scale">Scales</string>
+    <string name="bottom_navigation_songs">Songs</string>
+    <string name="bottom_navigation_settings">Settings</string>
 </resources>
