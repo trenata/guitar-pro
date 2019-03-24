@@ -9,4 +9,6 @@
     <dimen name="description_distance_sides">48dp</dimen>
     <dimen name="description_distance_bottom">130dp</dimen>
     <dimen name="title_distance_bottom">8dp</dimen>
+    <dimen name="connection_mr">10dp</dimen>
+    <dimen name="connection_mt">10dp</dimen>
 </resources>
