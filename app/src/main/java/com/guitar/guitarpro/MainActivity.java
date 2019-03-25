@@ -1,7 +1,9 @@
 package com.guitar.guitarpro;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -56,5 +58,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             return true;
         }
         return false;
+    }
+
+    public void openConnectionActivity(View view) {
+        Intent intent = new Intent(this, ConnectionActivity.class);
+
+        startActivity(intent);
     }
 }
