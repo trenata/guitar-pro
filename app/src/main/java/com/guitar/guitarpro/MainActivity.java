@@ -18,10 +18,19 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        loadFragment(new SettingsFragment());
+        if (savedInstanceState == null)
+            loadFragment(new SettingsFragment());
 
         BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(this);
+
+
+        UserPreferenceManager preferences = new UserPreferenceManager(this);
+
+        if (!preferences.getOnboardingComplete("onboarding_complete")) {
+            Intent intent = new Intent(this, OnboardingActivity.class);
+            startActivity(intent);
+        }
     }
 
     @Override
