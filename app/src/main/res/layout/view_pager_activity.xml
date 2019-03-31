@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/first_keyline"
         android:backgroundTint="@color/white"
-        android:onClick="openMainActivity"
+        android:onClick="closeOnboarding"
         android:text="@string/view_pager_button"
         android:textColor="@color/button_text"
         app:layout_constraintBottom_toBottomOf="parent"

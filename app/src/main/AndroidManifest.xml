@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".OnboardingActivity"
+            android:name=".MainActivity"
             android:theme="@style/AppTheme.Onboarding">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".OnboardingActivity"
             android:theme="@style/AppTheme" />
         <activity android:name=".ConnectionActivity"/>
     </application>
