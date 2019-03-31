@@ -1,10 +1,7 @@
 package com.guitar.guitarpro;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -16,31 +13,45 @@ import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    Context context;
+    private int saveState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-
-        if (savedInstanceState == null) {
-            loadFragment(new ChordFragment());
-        } else {
-            finish();
-        }
-
         BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
         UserPreferenceManager preferences = new UserPreferenceManager(this);
 
-        if(!preferences.getShouldShowOnboarding("onboarding_complete")){
+        if (savedInstanceState == null) {
+            loadFragment(new SettingFragment());
+        } else {
+            preferences.setLastScreen("last_screen", saveState);
+            switch (preferences.getLastScreen("last_screen")) {
+                case R.id.chords:
+                    loadFragment(new ChordFragment());
+                    break;
+
+                case R.id.scale:
+                    loadFragment(new ScaleFragment());
+                    break;
+                case R.id.songs:
+                    loadFragment(new SongFragment());
+                    break;
+                case R.id.settings:
+                    loadFragment(new SettingFragment());
+                    break;
+            }
+
+        }
+
+        if (!preferences.getShouldShowOnboarding("onboarding_complete")) {
             Intent intent = new Intent(this,
                     OnboardingActivity.class);
             startActivity(intent);
         }
-
     }
 
     @Override
@@ -61,7 +72,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.settings:
                 fragment = new SettingFragment();
                 break;
-
 
         }
 
