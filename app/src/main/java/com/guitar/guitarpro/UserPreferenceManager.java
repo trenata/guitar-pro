@@ -13,7 +13,7 @@ public class UserPreferenceManager {
 
         sharedPreferences = context.getSharedPreferences("My preferences", MODE_PRIVATE);
         sharedPreferences.getBoolean("onboarding_complete", false);
-        sharedPreferences.getInt("last_screen",0);
+        sharedPreferences.getString("last_screen", "settings");
 
     }
 
@@ -28,12 +28,13 @@ public class UserPreferenceManager {
         return sharedPreferences.getBoolean(key, false);
     }
 
-    public void setLastScreen(String key, int value){
+    public void setLastScreen(String key, String value) {
         prefsEditor = sharedPreferences.edit();
-        prefsEditor.putInt(key,value);
+        prefsEditor.putString(key, value);
         prefsEditor.apply();
     }
-    public int getLastScreen(String key){
-        return sharedPreferences.getInt(key,0);
+
+    public String getLastScreen(String key) {
+        return sharedPreferences.getString(key,"settings");
     }
 }
