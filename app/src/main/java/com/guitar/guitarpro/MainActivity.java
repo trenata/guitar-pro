@@ -18,9 +18,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        if (savedInstanceState == null)
-            loadFragment(new SettingsFragment());
-
         BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
@@ -31,27 +28,57 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             Intent intent = new Intent(this, OnboardingActivity.class);
             startActivity(intent);
         }
+
+        if (savedInstanceState == null) {
+            loadFragment(new SettingsFragment());
+        } else {
+            Fragment fragment = null;
+            switch (preferences.getLastScreen("last_screen")) {
+                case "chords":
+                    fragment = new ChordsFragment();
+                    break;
+                case "scales":
+                    fragment = new ScalesFragment();
+                    break;
+                case "songs":
+                    fragment = new SongsFragment();
+                    break;
+                case "settings":
+                    fragment = new SettingsFragment();
+                    break;
+            }
+            loadFragment(fragment);
+        }
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
+        UserPreferenceManager preferences = new UserPreferenceManager(this);
 
         switch (item.getItemId()) {
             case R.id.chords:
                 fragment = new ChordsFragment();
+                preferences.setLastScreen("last_screen", "chords");
+
                 break;
 
             case R.id.scales:
                 fragment = new ScalesFragment();
+                preferences.setLastScreen("last_screen", "scales");
+
                 break;
 
             case R.id.songs:
                 fragment = new SongsFragment();
+                preferences.setLastScreen("last_screen", "songs");
+
                 break;
 
             case R.id.settings:
                 fragment = new SettingsFragment();
+                preferences.setLastScreen("last_screen", "settings");
+
                 break;
         }
 

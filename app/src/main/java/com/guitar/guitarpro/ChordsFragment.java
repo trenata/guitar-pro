@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 public class ChordsFragment extends Fragment {
 
     ChordsFragment() {
-
+        String className = this.getContext().toString();
     }
 
     @Nullable
@@ -20,3 +20,4 @@ public class ChordsFragment extends Fragment {
         return inflater.inflate(R.layout.chords_fragment, null);
     }
 }
+
