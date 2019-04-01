@@ -29,26 +29,23 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             startActivity(intent);
         }
 
-        if (savedInstanceState == null) {
-            loadFragment(new SettingsFragment());
-        } else {
-            Fragment fragment = null;
-            switch (preferences.getLastScreen("last_screen")) {
-                case "chords":
-                    fragment = new ChordsFragment();
-                    break;
-                case "scales":
-                    fragment = new ScalesFragment();
-                    break;
-                case "songs":
-                    fragment = new SongsFragment();
-                    break;
-                case "settings":
-                    fragment = new SettingsFragment();
-                    break;
-            }
-            loadFragment(fragment);
+        Fragment fragment = null;
+        switch (preferences.getLastScreen("last_screen")) {
+            case "chords":
+                fragment = new ChordsFragment();
+                break;
+            case "scales":
+                fragment = new ScalesFragment();
+                break;
+            case "songs":
+                fragment = new SongsFragment();
+                break;
+            case "settings":
+                fragment = new SettingsFragment();
+                break;
         }
+        loadFragment(fragment);
+
     }
 
     @Override
@@ -57,29 +54,33 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         UserPreferenceManager preferences = new UserPreferenceManager(this);
 
         switch (item.getItemId()) {
-            case R.id.chords:
+            case R.id.chords: {
                 fragment = new ChordsFragment();
                 preferences.setLastScreen("last_screen", "chords");
 
                 break;
+            }
 
-            case R.id.scales:
+            case R.id.scales: {
                 fragment = new ScalesFragment();
                 preferences.setLastScreen("last_screen", "scales");
 
                 break;
+            }
 
-            case R.id.songs:
+            case R.id.songs: {
                 fragment = new SongsFragment();
                 preferences.setLastScreen("last_screen", "songs");
 
                 break;
+            }
 
-            case R.id.settings:
+            case R.id.settings: {
                 fragment = new SettingsFragment();
                 preferences.setLastScreen("last_screen", "settings");
 
                 break;
+            }
         }
 
         return loadFragment(fragment);

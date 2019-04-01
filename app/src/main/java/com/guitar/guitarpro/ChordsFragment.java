@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 public class ChordsFragment extends Fragment {
 
     ChordsFragment() {
-        String className = this.getContext().toString();
+
     }
 
     @Nullable

@@ -8,11 +8,12 @@ import static android.content.Context.MODE_PRIVATE;
 public class UserPreferenceManager {
 
     private SharedPreferences pref;
-    SharedPreferences.Editor editor;
+    private SharedPreferences.Editor editor;
+
     UserPreferenceManager(Context context) {
         pref = context.getSharedPreferences("MyPref", MODE_PRIVATE);
         pref.getBoolean("onboarding_complete", false);
-        pref.getString("last_screen", null);
+        pref.getString("last_screen", "settings");
     }
 
     public void setOnboardingComplete(String key, boolean value) {
@@ -34,6 +35,6 @@ public class UserPreferenceManager {
     }
 
     public String getLastScreen(String key) {
-        return pref.getString(key, null);
+        return pref.getString(key, "settings");
     }
 }
