@@ -13,6 +13,9 @@ import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
+    private UserPreferenceManager preferences;
+    private static String lastScreen = "last_screen";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,66 +24,70 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
+        preferences = UserPreferenceManager.getInstance(this);
 
-        UserPreferenceManager preferences = new UserPreferenceManager(this);
+        if (preferences.getLastScreen(lastScreen) == null) {
+            loadFragment(new SettingsFragment());
+            navigation.setSelectedItemId(R.id.settings);
 
-        if (!preferences.getOnboardingComplete("onboarding_complete")) {
-            Intent intent = new Intent(this, OnboardingActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(this, OnboardingActivity.class));
+        } else {
+            int id = 0;
+
+            switch (preferences.getLastScreen(lastScreen)) {
+                case UserPreferenceManager.chords:
+                    id = R.id.chords;
+
+                    break;
+
+                case UserPreferenceManager.scales:
+                    id = R.id.scales;
+
+                    break;
+
+                case UserPreferenceManager.songs:
+                    id = R.id.songs;
+
+                    break;
+
+                case UserPreferenceManager.settings:
+                    id = R.id.settings;
+
+                    break;
+            }
+
+            navigation.setSelectedItemId(id);
         }
-
-        Fragment fragment = null;
-        switch (preferences.getLastScreen("last_screen")) {
-            case "chords":
-                fragment = new ChordsFragment();
-                break;
-            case "scales":
-                fragment = new ScalesFragment();
-                break;
-            case "songs":
-                fragment = new SongsFragment();
-                break;
-            case "settings":
-                fragment = new SettingsFragment();
-                break;
-        }
-        loadFragment(fragment);
-
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
-        UserPreferenceManager preferences = new UserPreferenceManager(this);
 
         switch (item.getItemId()) {
-            case R.id.chords: {
+            case R.id.chords:
                 fragment = new ChordsFragment();
-                preferences.setLastScreen("last_screen", "chords");
+                preferences.setLastScreen(lastScreen, UserPreferenceManager.chords);
 
                 break;
-            }
 
-            case R.id.scales: {
+            case R.id.scales:
                 fragment = new ScalesFragment();
-                preferences.setLastScreen("last_screen", "scales");
+                preferences.setLastScreen(lastScreen, UserPreferenceManager.scales);
 
                 break;
-            }
 
-            case R.id.songs: {
+            case R.id.songs:
                 fragment = new SongsFragment();
-                preferences.setLastScreen("last_screen", "songs");
+                preferences.setLastScreen(lastScreen, UserPreferenceManager.songs);
 
                 break;
-            }
 
-            case R.id.settings: {
+            case R.id.settings:
                 fragment = new SettingsFragment();
-                preferences.setLastScreen("last_screen", "settings");
+                preferences.setLastScreen(lastScreen, UserPreferenceManager.settings);
 
                 break;
-            }
         }
 
         return loadFragment(fragment);

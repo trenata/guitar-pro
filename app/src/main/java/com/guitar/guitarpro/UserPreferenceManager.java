@@ -10,21 +10,18 @@ public class UserPreferenceManager {
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
 
-    UserPreferenceManager(Context context) {
+    private static UserPreferenceManager INSTANCE;
+
+    private static String lastScreen = "last_screen";
+
+    public static final String chords = "chords";
+    public static final String scales = "scales";
+    public static final String songs = "songs";
+    public static final String settings = "settings";
+
+    private UserPreferenceManager(Context context) {
         pref = context.getSharedPreferences("MyPref", MODE_PRIVATE);
-        pref.getBoolean("onboarding_complete", false);
-        pref.getString("last_screen", "settings");
-    }
-
-    public void setOnboardingComplete(String key, boolean value) {
-        editor = pref.edit();
-
-        editor.putBoolean(key, value);
-        editor.apply();
-    }
-
-    public boolean getOnboardingComplete(String key) {
-        return pref.getBoolean(key, false);
+        pref.getString(lastScreen, null);
     }
 
     public void setLastScreen(String key, String value) {
@@ -35,6 +32,13 @@ public class UserPreferenceManager {
     }
 
     public String getLastScreen(String key) {
-        return pref.getString(key, "settings");
+        return pref.getString(key, null);
+    }
+
+    public static UserPreferenceManager getInstance(Context context) {
+        if (INSTANCE == null) {
+            INSTANCE = new UserPreferenceManager(context);
+        }
+        return INSTANCE;
     }
 }
