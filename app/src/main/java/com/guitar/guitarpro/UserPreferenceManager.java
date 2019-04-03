@@ -6,26 +6,26 @@ import android.content.SharedPreferences;
 import static android.content.Context.MODE_PRIVATE;
 
 public class UserPreferenceManager {
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor prefsEditor;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor prefsEditor;
+    private static UserPreferenceManager INSTANCE = null;
+    private static String lastScreen = "last_screen";
+    public static final String chords = "chords";
+    public static final String scales = "scales";
+    public static final String songs = "songs";
+    public static final String settings = "settings";
 
-    public UserPreferenceManager(Context context) {
+    static UserPreferenceManager getInstance(Context context) {
+        if (INSTANCE == null) {
+            INSTANCE = new UserPreferenceManager(context);
+        }
+        return INSTANCE;
+    }
+
+    private UserPreferenceManager(Context context) {
 
         sharedPreferences = context.getSharedPreferences("My preferences", MODE_PRIVATE);
-        sharedPreferences.getBoolean("onboarding_complete", false);
-        sharedPreferences.getString("last_screen", "settings");
-
-    }
-
-
-    public void setShouldShowOnboarding(String key, Boolean value) {
-        prefsEditor = sharedPreferences.edit();
-        prefsEditor.putBoolean(key, value);
-        prefsEditor.apply();
-    }
-
-    public Boolean getShouldShowOnboarding(String key) {
-        return sharedPreferences.getBoolean(key, false);
+        sharedPreferences.getString(lastScreen, null);
     }
 
     public void setLastScreen(String key, String value) {
@@ -35,6 +35,6 @@ public class UserPreferenceManager {
     }
 
     public String getLastScreen(String key) {
-        return sharedPreferences.getString(key,"settings");
+        return sharedPreferences.getString(key, null);
     }
 }
