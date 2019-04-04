@@ -1,12 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/chords" />
+        android:layout_marginStart="@dimen/c_text_view_sides"
+        android:layout_marginTop="@dimen/c_text_view_top"
+        android:layout_marginEnd="@dimen/c_text_view_sides"
+        android:layout_marginBottom="@dimen/c_text_view_bottom"
+        android:width="@dimen/c_text_view_width"
+        android:height="@dimen/c_text_view_height"
+        android:text="Chords"
+        android:textAlignment="center"
+        android:textColor="#FF393939"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/center_sides"
+        android:layout_marginTop="@dimen/center_top"
+        android:layout_marginEnd="@dimen/center_sides"
+        android:src="@drawable/circle_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <CheckedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C"
+        app:layout_constraintCircle="@id/center"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="@dimen/circle_radius"
+        tools:ignore="MissingConstraints" />
+
+    <CheckedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D"
+        app:layout_constraintCircle="@id/center"
+        app:layout_constraintCircleAngle="52"
+        app:layout_constraintCircleRadius="@dimen/circle_radius"
+        tools:ignore="MissingConstraints" />
+
+    <CheckedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E"
+        app:layout_constraintCircle="@id/center"
+        app:layout_constraintCircleAngle="104"
+        app:layout_constraintCircleRadius="@dimen/circle_radius"
+        tools:ignore="MissingConstraints" />
+
+    <CheckedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="F"
+        app:layout_constraintCircle="@id/center"
+        app:layout_constraintCircleAngle="156"
+        app:layout_constraintCircleRadius="@dimen/circle_radius"
+        tools:ignore="MissingConstraints" />
+
+    <CheckedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="G"
+        app:layout_constraintCircle="@id/center"
+        app:layout_constraintCircleAngle="208"
+        app:layout_constraintCircleRadius="@dimen/circle_radius"
+        tools:ignore="MissingConstraints" />
+
+    <CheckedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="H"
+        app:layout_constraintCircle="@id/center"
+        app:layout_constraintCircleAngle="260"
+        app:layout_constraintCircleRadius="@dimen/circle_radius"
+        tools:ignore="MissingConstraints" />
+
+    <CheckedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A"
+        app:layout_constraintCircle="@id/center"
+        app:layout_constraintCircleAngle="312"
+        app:layout_constraintCircleRadius="@dimen/circle_radius"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
