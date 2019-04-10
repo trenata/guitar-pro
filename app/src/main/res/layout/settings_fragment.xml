@@ -7,6 +7,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Settings" />
+        android:text="@string/settings" />
 
+    <Button
+        android:id="@+id/see_onboarding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/see_onboarding" />
 </FrameLayout>

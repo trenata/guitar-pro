@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 public class OnboardingActivity extends AppCompatActivity {
+    private static String lastScreen = "last_screen";
 
     private static String lastScreen = "last_screen";
 

@@ -16,11 +16,15 @@
     </string-array>
 
     <string name="view_pager_button">LET\'S TRY OUT</string>
-
     <string name="bottom_nav_chords">Chords</string>
     <string name="bottom_nav_scales">Scales</string>
     <string name="bottom_nav_songs">Songs</string>
     <string name="bottom_nav_settings">Settings</string>
+    <string name="chords">Chords</string>
+    <string name="scales">Scales</string>
+    <string name="songs">Songs</string>
+    <string name="settings">Settings</string>
+    <string name="see_onboarding">See onboarding</string>
 
     <string name="chordC">C</string>
     <string name="chordD">D</string>
