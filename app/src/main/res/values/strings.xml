@@ -1,26 +1,36 @@
 <resources>
     <string name="app_name">Guitar Pro</string>
+
     <string-array name="titles">
         <item>Welcome to Guitar Pro!</item>
         <item>The body</item>
         <item>The neck</item>
         <item>The head</item>
     </string-array>
+
     <string-array name="descriptions">
         <item>Let\’s introduce you the key elements of a guitar. The Metal be with you!</item>
         <item>It\’s curvacious. It screams sexy. It\'s… a guitar.</item>
         <item>The neck basically is the section of the guitar that holds your fretboard, strings, and headstock.</item>
         <item>The guitar head is like a real head. Without it, your guitar is basically useless and unplayable.</item>
     </string-array>
+
     <string name="view_pager_button">LET\'S TRY OUT</string>
-    <string name="bottom_navigation_chord">Chords</string>
-    <string name="bottom_navigation_scale">Scales</string>
-    <string name="bottom_navigation_songs">Songs</string>
-    <string name="bottom_navigation_settings">Settings</string>
+    <string name="bottom_nav_chords">Chords</string>
+    <string name="bottom_nav_scales">Scales</string>
+    <string name="bottom_nav_songs">Songs</string>
+    <string name="bottom_nav_settings">Settings</string>
     <string name="chords">Chords</string>
     <string name="scales">Scales</string>
     <string name="songs">Songs</string>
     <string name="settings">Settings</string>
     <string name="see_onboarding">See onboarding</string>
 
+    <string name="chordC">C</string>
+    <string name="chordD">D</string>
+    <string name="chordE">E</string>
+    <string name="chordF">F</string>
+    <string name="chordG">G</string>
+    <string name="chordH">H</string>
+    <string name="chordA">A</string>
 </resources>

@@ -11,6 +11,8 @@ import androidx.viewpager.widget.ViewPager;
 public class OnboardingActivity extends AppCompatActivity {
     private static String lastScreen = "last_screen";
 
+    private static String lastScreen = "last_screen";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

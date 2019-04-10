@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:actionLayout="@layout/main_activity">
+
     <item
         android:id="@+id/chords"
         android:icon="@drawable/ic_music_note_black_24dp"
-        android:title="@string/bottom_navigation_chord" />
+        android:title="@string/bottom_nav_chords" />
     <item
-        android:id="@+id/scale"
+        android:id="@+id/scales"
         android:icon="@drawable/ic_reorder_black_24dp"
-        android:title="@string/bottom_navigation_scale" />
+        android:title="@string/bottom_nav_scales" />
     <item
         android:id="@+id/songs"
         android:icon="@drawable/ic_queue_music_black_24dp"
-        android:title="@string/bottom_navigation_songs" />
+        android:title="@string/bottom_nav_songs" />
     <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_settings_black_24dp"
-        android:title="@string/bottom_navigation_settings" />
+        android:title="@string/bottom_nav_settings" />
+
 </menu>

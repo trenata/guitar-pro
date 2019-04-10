@@ -9,15 +9,5 @@
     <dimen name="description_distance_sides">48dp</dimen>
     <dimen name="description_distance_bottom">130dp</dimen>
     <dimen name="title_distance_bottom">8dp</dimen>
-    <dimen name="connection_mr">10dp</dimen>
-    <dimen name="connection_mt">10dp</dimen>
-    <dimen name="c_text_view_sides">8dp</dimen>
-    <dimen name="c_text_view_top">512dp</dimen>
-    <dimen name="c_text_view_bottom">200dp</dimen>
-    <dimen name="c_text_view_width">51dp</dimen>
-    <dimen name="c_text_view_height">24dp</dimen>
-    <dimen name="center_sides">84dp</dimen>
-    <dimen name="center_top">216dp</dimen>
-    <dimen name="circle_radius">120dp</dimen>
-
+    <dimen name="connection_margins">10dp</dimen>
 </resources>

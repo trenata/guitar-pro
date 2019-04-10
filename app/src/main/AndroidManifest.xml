@@ -9,19 +9,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity
-            android:name=".MainActivity"
-            android:theme="@style/AppTheme.Onboarding">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".OnboardingActivity"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".ConnectionActivity"/>
+            android:theme="@style/AppTheme.Onboarding" />
+
+        <activity android:name=".ConnectionActivity" />
+
     </application>
 
 </manifest>
