@@ -2,8 +2,10 @@ package com.guitar.guitarpro;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+
 
         BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(this);
@@ -58,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
             navigation.setSelectedItemId(id);
         }
+
     }
 
     @Override
@@ -103,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         return false;
     }
+
 
     public void openConnectionActivity(View view) {
         Intent intent = new Intent(this, ConnectionActivity.class);
