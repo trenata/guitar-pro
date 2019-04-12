@@ -10,4 +10,7 @@
     <dimen name="description_distance_bottom">130dp</dimen>
     <dimen name="title_distance_bottom">8dp</dimen>
     <dimen name="connection_margins">10dp</dimen>
+    <dimen name="checked_text_view_width">38dp</dimen>
+    <dimen name="checked_text_view_height">20dp</dimen>
+
 </resources>
