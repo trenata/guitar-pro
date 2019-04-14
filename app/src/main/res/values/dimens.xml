@@ -9,5 +9,25 @@
     <dimen name="description_distance_sides">48dp</dimen>
     <dimen name="description_distance_bottom">130dp</dimen>
     <dimen name="title_distance_bottom">8dp</dimen>
-    <dimen name="connection_margins">10dp</dimen>
+    <dimen name="connection_margins">15dp</dimen>
+    <dimen name="con_close_sides">15dp</dimen>
+    <dimen name="con_close_wh">24dp</dimen>
+    <dimen name="con_image_top">186dp</dimen>
+    <dimen name="con_image_bottom">24dp</dimen>
+    <dimen name="con_image_sides">100dp</dimen>
+    <dimen name="con_title_sides">112dp</dimen>
+    <dimen name="con_title_top">368dp</dimen>
+    <dimen name="con_title_bottom">246dp</dimen>
+    <dimen name="con_title_width">144dp</dimen>
+    <dimen name="con_title_height">26dp</dimen>
+    <dimen name="con_desc_sides">48dp</dimen>
+    <dimen name="con_desc_top">402dp</dimen>
+    <dimen name="con_desc_bottom">166dp</dimen>
+    <dimen name="con_desc_width">264dp</dimen>
+    <dimen name="con_desc_height">72dp</dimen>
+    <dimen name="con_button_sides">120dp</dimen>
+    <dimen name="con_button_top">498dp</dimen>
+    <dimen name="con_button_bottom">106dp</dimen>
+    <dimen name="con_button_width">120dp</dimen>
+    <dimen name="con_button_height">36dp</dimen>
 </resources>

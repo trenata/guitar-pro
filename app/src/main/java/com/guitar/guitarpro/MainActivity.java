@@ -2,7 +2,6 @@ package com.guitar.guitarpro;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toolbar;
@@ -26,6 +25,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(this);
+
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setActionBar(myToolbar);
+
 
         preferences = UserPreferenceManager.getInstance(this);
 

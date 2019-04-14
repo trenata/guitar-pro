@@ -1,7 +1,7 @@
 package com.guitar.guitarpro;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -17,9 +17,14 @@ public class ConnectionActivity extends AppCompatActivity {
         setContentView(R.layout.connection_activity);
     }
 
-    public void showSnackBar(View view){
+    public void showSnackBar(View view) {
         Snackbar.make(findViewById(R.id.connection), R.string.error,
                 Snackbar.LENGTH_LONG)
                 .show();
+    }
+
+    public void openMainActivity(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
