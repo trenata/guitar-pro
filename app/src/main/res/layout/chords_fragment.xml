@@ -21,6 +21,7 @@
         android:text="@string/chordC"
         android:textAlignment="center"
         android:textColor="@color/checked_text_view_colors"
+        android:textSize="14sp"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="0"
         app:layout_constraintCircleRadius="120dp" />
@@ -32,6 +33,7 @@
         android:text="@string/chordD"
         android:textAlignment="center"
         android:textColor="@color/checked_text_view_colors"
+        android:textSize="14sp"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="51"
         app:layout_constraintCircleRadius="120dp" />
@@ -43,6 +45,7 @@
         android:text="@string/chordE"
         android:textAlignment="center"
         android:textColor="@color/checked_text_view_colors"
+        android:textSize="14sp"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="102"
         app:layout_constraintCircleRadius="120dp" />
@@ -54,6 +57,7 @@
         android:text="@string/chordF"
         android:textAlignment="center"
         android:textColor="@color/checked_text_view_colors"
+        android:textSize="14sp"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="153"
         app:layout_constraintCircleRadius="120dp" />
@@ -65,6 +69,7 @@
         android:text="@string/chordG"
         android:textAlignment="center"
         android:textColor="@color/checked_text_view_colors"
+        android:textSize="14sp"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="205"
         app:layout_constraintCircleRadius="120dp" />
@@ -76,6 +81,7 @@
         android:text="@string/chordH"
         android:textAlignment="center"
         android:textColor="@color/checked_text_view_colors"
+        android:textSize="14sp"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="257"
         app:layout_constraintCircleRadius="120dp" />
@@ -87,9 +93,29 @@
         android:text="@string/chordA"
         android:textAlignment="center"
         android:textColor="@color/checked_text_view_colors"
+        android:textSize="14sp"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="307"
         app:layout_constraintCircleRadius="120dp" />
+
+    <TextView
+        android:id="@+id/chord_screen_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/chords_screen_text_view"
+        android:textSize="18sp"
+        android:textColor="@color/lightBlack"
+        app:layout_constraintTop_toBottomOf="@id/chordG"
+        android:layout_marginTop="30dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/chord_screen_text"
+        android:orientation="horizontal" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

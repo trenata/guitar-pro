@@ -1,6 +1,5 @@
 package com.guitar.guitarpro;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +8,14 @@ import android.widget.CheckedTextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class ChordsFragment extends Fragment {
+
+    private RecyclerView mRecyclerView;
+    private String[] mChordList;
 
     ChordsFragment() {
 
@@ -74,6 +79,8 @@ public class ChordsFragment extends Fragment {
                 selectOne(chordA);
             }
         });
+
+
     }
 
     private void selectOne(CheckedTextView chord) {
@@ -90,8 +97,35 @@ public class ChordsFragment extends Fragment {
             if (chord != chords[i]) {
                 chords[i].setChecked(false);
             }
-            chord.toggle();
+            chord.setChecked(true);
         }
+        setAdapter(chord);
+    }
+
+    private void setAdapter(CheckedTextView chosenChord) {
+        if (chosenChord == getView().findViewById(R.id.chordC)) {
+            mChordList = new String[]{"C", "Cm"};
+        } else if (chosenChord == getView().findViewById(R.id.chordD)) {
+            mChordList = new String[]{"D", "Dm"};
+        } else if (chosenChord == getView().findViewById(R.id.chordE)) {
+            mChordList = new String[]{"E", "Em"};
+        } else if (chosenChord == getView().findViewById(R.id.chordF)) {
+            mChordList = new String[]{"F", "Fm"};
+        } else if (chosenChord == getView().findViewById(R.id.chordG)) {
+            mChordList = new String[]{"G", "Gm"};
+        } else if (chosenChord == getView().findViewById(R.id.chordH)) {
+            mChordList = new String[]{"H", "Hm"};
+        } else if (chosenChord == getView().findViewById(R.id.chordA)) {
+            mChordList = new String[]{"A", "Am"};
+        } else {
+            mChordList = new String[]{""};
+        }
+        mRecyclerView = getView().findViewById(R.id.recycler_view);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        mRecyclerView.setLayoutManager(linearLayoutManager);
+
+        ChordsAdapter chordsAdapter = new ChordsAdapter(getContext(), mChordList);
+        mRecyclerView.setAdapter(chordsAdapter);
     }
 }
 

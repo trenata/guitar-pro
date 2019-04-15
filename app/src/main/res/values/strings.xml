@@ -33,4 +33,6 @@
     <string name="chordG">G</string>
     <string name="chordH">H</string>
     <string name="chordA">A</string>
+
+    <string name="chords_screen_text_view">Chords</string>
 </resources>
