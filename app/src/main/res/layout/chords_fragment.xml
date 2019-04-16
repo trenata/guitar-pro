@@ -15,20 +15,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatCheckedTextView
+    <CheckedTextView
         android:id="@+id/chordC"
-        android:layout_width="@dimen/checked_text_view_width"
-        android:layout_height="@dimen/checked_text_view_height"
+        style="@style/Chord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/chordC"
-        android:textAlignment="center"
-        android:textColor="@color/checked_text_view_colors"
-        android:textSize="14sp"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="0"
         app:layout_constraintCircleRadius="120dp"
         tools:ignore="MissingConstraints" />
 
-    <androidx.appcompat.widget.AppCompatCheckedTextView
+    <CheckedTextView
         android:id="@+id/chordD"
         android:layout_width="@dimen/checked_text_view_width"
         android:layout_height="@dimen/checked_text_view_height"
@@ -40,7 +38,7 @@
         app:layout_constraintCircleAngle="51"
         app:layout_constraintCircleRadius="120dp" />
 
-    <androidx.appcompat.widget.AppCompatCheckedTextView
+    <CheckedTextView
         android:id="@+id/chordE"
         android:layout_width="@dimen/checked_text_view_width"
         android:layout_height="@dimen/checked_text_view_height"
@@ -52,7 +50,7 @@
         app:layout_constraintCircleAngle="102"
         app:layout_constraintCircleRadius="120dp" />
 
-    <androidx.appcompat.widget.AppCompatCheckedTextView
+    <CheckedTextView
         android:id="@+id/chordF"
         android:layout_width="@dimen/checked_text_view_width"
         android:layout_height="@dimen/checked_text_view_height"
@@ -64,7 +62,7 @@
         app:layout_constraintCircleAngle="153"
         app:layout_constraintCircleRadius="120dp" />
 
-    <androidx.appcompat.widget.AppCompatCheckedTextView
+    <CheckedTextView
         android:id="@+id/chordG"
         android:layout_width="@dimen/checked_text_view_width"
         android:layout_height="@dimen/checked_text_view_height"
@@ -76,7 +74,7 @@
         app:layout_constraintCircleAngle="205"
         app:layout_constraintCircleRadius="120dp" />
 
-    <androidx.appcompat.widget.AppCompatCheckedTextView
+    <CheckedTextView
         android:id="@+id/chordH"
         android:layout_width="@dimen/checked_text_view_width"
         android:layout_height="@dimen/checked_text_view_height"
@@ -88,7 +86,7 @@
         app:layout_constraintCircleAngle="257"
         app:layout_constraintCircleRadius="120dp" />
 
-    <androidx.appcompat.widget.AppCompatCheckedTextView
+    <CheckedTextView
         android:id="@+id/chordA"
         android:layout_width="@dimen/checked_text_view_width"
         android:layout_height="@dimen/checked_text_view_height"

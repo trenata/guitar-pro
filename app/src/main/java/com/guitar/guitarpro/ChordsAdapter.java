@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.CheckedTextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,7 +14,7 @@ public class ChordsAdapter extends RecyclerView.Adapter<ChordsAdapter.ChordViewH
 
     public class ChordViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView mChordName;
+        private CheckedTextView mChordName;
 
         private ChordViewHolder(View itemView) {
             super(itemView);
@@ -46,8 +46,9 @@ public class ChordsAdapter extends RecyclerView.Adapter<ChordsAdapter.ChordViewH
         holder.mChordName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.mChordName.setBackgroundColor(mContext.getColor(R.color.colorPrimary));
+                holder.mChordName.toggle();
 //                // elkuldeni az Arduinonak
+//                new Chord.Builder().addNote(new Note()).addNote(new Note()).addNote(new Note()).build();
             }
         });
     }
