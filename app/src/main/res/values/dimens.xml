@@ -10,6 +10,8 @@
     <dimen name="description_distance_bottom">130dp</dimen>
     <dimen name="title_distance_bottom">8dp</dimen>
     <dimen name="connection_margins">15dp</dimen>
+    <dimen name="checked_text_view_width">50dp</dimen>
+    <dimen name="checked_text_view_height">20dp</dimen>
     <dimen name="con_close_sides">15dp</dimen>
     <dimen name="con_close_wh">24dp</dimen>
     <dimen name="con_image_top">186dp</dimen>
@@ -30,4 +32,5 @@
     <dimen name="con_button_bottom">106dp</dimen>
     <dimen name="con_button_width">120dp</dimen>
     <dimen name="con_button_height">36dp</dimen>
+
 </resources>

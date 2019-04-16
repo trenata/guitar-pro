@@ -34,6 +34,8 @@
     <string name="chordH">H</string>
     <string name="chordA">A</string>
 
+    <string name="chords_screen_text_view">Chords</string>
+
     <string name="connection_title">Pair your device</string>
     <string name="connection_description">Make sure to turn on your Arduino.
 Once it’s done, you can initialise the connection.</string>
