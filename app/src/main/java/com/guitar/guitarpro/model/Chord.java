@@ -14,15 +14,15 @@ public final class Chord {
         this.notes = notes;
     }
 
-    public class Builder {
+    public static class Builder {
         private final List<Note> notes = new ArrayList<>();
 
-        Builder addNote(Note note) {
+        public Builder addNote(Note note) {
             notes.add(note);
             return this;
         }
 
-        Chord build() {
+        public Chord build() {
             return new Chord(notes);
         }
     }

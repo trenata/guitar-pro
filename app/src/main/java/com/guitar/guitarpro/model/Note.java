@@ -1,6 +1,6 @@
 package com.guitar.guitarpro.model;
 
-final class Note {
+public final class Note {
     private static final int MIN_STRING_INDEX = 1;
     private static final int MAX_STRING_INDEX = 6;
     private static final int MIN_FRET_INDEX = 1;
@@ -9,7 +9,7 @@ final class Note {
     private final int fretIndex;
     private final Color color;
 
-    Note(int stringIndex, int fretIndex, Color color) {
+    public Note(int stringIndex, int fretIndex, Color color) {
         if (stringIndex < MIN_STRING_INDEX || stringIndex > MAX_STRING_INDEX) {
             throw new IllegalArgumentException("The string index must be between " + MIN_STRING_INDEX + " and " + MAX_STRING_INDEX + ".");
         }

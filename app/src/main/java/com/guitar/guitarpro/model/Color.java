@@ -1,5 +1,5 @@
 package com.guitar.guitarpro.model;
 
-enum Color {
+public enum Color {
     RED, GREEN, BLUE, YELLOW, WHITE
 }

@@ -4,6 +4,7 @@ import com.guitar.guitarpro.model.Chord;
 
 public interface GuitarConnectionManager {
 
+
     interface ConnectionCallback {
 
         void onConnected();
