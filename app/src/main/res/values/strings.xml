@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Guitar Pro</string>
+    <string name="app_name">PlayIt</string>
 
     <string-array name="titles">
-        <item>Welcome to Guitar Pro!</item>
+        <item>Welcome to PlayIt!</item>
         <item>The body</item>
         <item>The neck</item>
         <item>The head</item>
@@ -37,10 +37,13 @@
     <string name="chords_screen_text_view">Chords</string>
 
     <string name="connection_title">Pair your device</string>
-    <string name="connection_description">Make sure to turn on your Arduino.
-Once it’s done, you can initialise the connection.</string>
+    <string name="connection_description">Make sure to turn on your Arduino.\nOnce it’s done, you can initialise the connection.</string>
     <string name="connection_button_pair">PAIR</string>
+
+    <string name="connection_title_unpair">Unpair your device</string>
+    <string name="connection_description_unpair">To disconnect safely from the Arduino make sure you unpair your device first.</string>
     <string name="connection_button_unpair">UNPAIR</string>
+
     <string name="error">Something went wrong. Please try again.</string>
 
 </resources>

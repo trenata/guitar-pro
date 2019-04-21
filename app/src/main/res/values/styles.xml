@@ -17,6 +17,8 @@
         <item name="android:textColor">@color/checked_text_view_colors</item>
         <item name="android:textSize">14sp</item>
         <item name="android:padding">6dp</item>
+        <item name="android:background">@drawable/selector_note</item>
+
     </style>
 
 

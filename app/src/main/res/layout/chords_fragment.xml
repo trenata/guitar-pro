@@ -9,6 +9,8 @@
         android:id="@+id/circle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="176dp"
+        android:layout_marginBottom="272dp"
         android:src="@drawable/ic_circle_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,9 +26,7 @@
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="0"
         app:layout_constraintCircleRadius="134dp"
-        tools:ignore="MissingConstraints"
-        android:background="@drawable/selector_note"
-        />
+        tools:ignore="MissingConstraints" />
 
     <CheckedTextView
         android:id="@+id/chordD"
@@ -36,9 +36,7 @@
         android:text="@string/chordD"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="51"
-        app:layout_constraintCircleRadius="134dp"
-        android:background="@drawable/selector_note"
-        />
+        app:layout_constraintCircleRadius="134dp" />
 
     <CheckedTextView
         android:id="@+id/chordE"
@@ -48,9 +46,7 @@
         android:text="@string/chordE"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="102"
-        app:layout_constraintCircleRadius="134dp"
-        android:background="@drawable/selector_note"
-        />
+        app:layout_constraintCircleRadius="134dp" />
 
     <CheckedTextView
         android:id="@+id/chordF"
@@ -60,9 +56,7 @@
         android:text="@string/chordF"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="153"
-        app:layout_constraintCircleRadius="134dp"
-        android:background="@drawable/selector_note"
-        />
+        app:layout_constraintCircleRadius="134dp" />
 
     <CheckedTextView
         android:id="@+id/chordG"
@@ -72,9 +66,7 @@
         android:text="@string/chordG"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="205"
-        app:layout_constraintCircleRadius="134dp"
-        android:background="@drawable/selector_note"
-        />
+        app:layout_constraintCircleRadius="134dp" />
 
     <CheckedTextView
         android:id="@+id/chordH"
@@ -84,9 +76,7 @@
         android:text="@string/chordH"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="257"
-        app:layout_constraintCircleRadius="134dp"
-        android:background="@drawable/selector_note"
-        />
+        app:layout_constraintCircleRadius="134dp" />
 
     <CheckedTextView
         android:id="@+id/chordA"
@@ -96,9 +86,7 @@
         android:text="@string/chordA"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="307"
-        app:layout_constraintCircleRadius="134dp"
-        android:background="@drawable/selector_note"
-        />
+        app:layout_constraintCircleRadius="134dp" />
 
     <TextView
         android:id="@+id/chord_screen_text"
@@ -117,9 +105,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/chord_screen_text"
         android:paddingStart="100dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/chord_screen_text" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

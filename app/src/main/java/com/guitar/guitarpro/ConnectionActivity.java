@@ -33,7 +33,7 @@ public class ConnectionActivity extends AppCompatActivity {
     public void showSnackBar(View view) {
 //        GuitarConnectionManager.ConnectionCallback connectionCallback = null;
 //        mockGuitarConnectionManager.connect(connectionCallback);
-        Snackbar.make(findViewById(R.id.connection), "You are connected",
+        Snackbar.make(findViewById(R.id.connection), R.string.error,
                 Snackbar.LENGTH_LONG)
                 .show();
     }
