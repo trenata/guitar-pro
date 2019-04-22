@@ -1,21 +1,30 @@
 package com.guitar.guitarpro;
 
+import android.content.ClipData;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckedTextView;
 
+import com.google.android.material.snackbar.Snackbar;
+import com.guitar.guitarpro.model.SelectableChord;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ChordsFragment extends Fragment {
+public class ChordsFragment extends Fragment implements ChordsAdapter.ChordViewHolder.OnItemSelectedListener {
 
     private RecyclerView mRecyclerView;
     private String[] mChordList;
+
+    RecyclerView recyclerView;
+    ChordsAdapter adapter;
 
     ChordsFragment() {
 
@@ -103,29 +112,71 @@ public class ChordsFragment extends Fragment {
     }
 
     private void setAdapter(CheckedTextView chosenChord) {
-        if (chosenChord == getView().findViewById(R.id.chordC)) {
-            mChordList = new String[]{"C", "Cm"};
-        } else if (chosenChord == getView().findViewById(R.id.chordD)) {
-            mChordList = new String[]{"D", "Dm"};
-        } else if (chosenChord == getView().findViewById(R.id.chordE)) {
-            mChordList = new String[]{"E", "Em"};
-        } else if (chosenChord == getView().findViewById(R.id.chordF)) {
-            mChordList = new String[]{"F", "Fm"};
-        } else if (chosenChord == getView().findViewById(R.id.chordG)) {
-            mChordList = new String[]{"G", "Gm"};
-        } else if (chosenChord == getView().findViewById(R.id.chordH)) {
-            mChordList = new String[]{"H", "Hm"};
-        } else if (chosenChord == getView().findViewById(R.id.chordA)) {
-            mChordList = new String[]{"A", "Am"};
-        } else {
-            mChordList = new String[]{""};
-        }
+//        if (chosenChord == getView().findViewById(R.id.chordC)) {
+//            mChordList = new String[]{"C", "Cm"};
+//        } else if (chosenChord == getView().findViewById(R.id.chordD)) {
+//            mChordList = new String[]{"D", "Dm"};
+//        } else if (chosenChord == getView().findViewById(R.id.chordE)) {
+//            mChordList = new String[]{"E", "Em"};
+//        } else if (chosenChord == getView().findViewById(R.id.chordF)) {
+//            mChordList = new String[]{"F", "Fm"};
+//        } else if (chosenChord == getView().findViewById(R.id.chordG)) {
+//            mChordList = new String[]{"G", "Gm"};
+//        } else if (chosenChord == getView().findViewById(R.id.chordH)) {
+//            mChordList = new String[]{"H", "Hm"};
+//        } else if (chosenChord == getView().findViewById(R.id.chordA)) {
+//            mChordList = new String[]{"A", "Am"};
+//        } else {
+//            mChordList = new String[]{""};
+//        }
         mRecyclerView = getView().findViewById(R.id.recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(linearLayoutManager);
 
-        ChordsAdapter chordsAdapter = new ChordsAdapter(getContext(), mChordList);
-        mRecyclerView.setAdapter(chordsAdapter);
+        List<ClipData.Item> selectableItems = generateItems(chosenChord);
+
+        adapter = new ChordsAdapter(this, selectableItems);
+        mRecyclerView.setAdapter(adapter);
+    }
+
+    public List<ClipData.Item> generateItems(CheckedTextView chosenChord) {
+
+        List<ClipData.Item> selectableItems = new ArrayList<>();
+
+        if (chosenChord == getView().findViewById(R.id.chordC)) {
+            selectableItems.add(new ClipData.Item("C"));
+            selectableItems.add(new ClipData.Item("Cm"));
+        } else if (chosenChord == getView().findViewById(R.id.chordD)) {
+            selectableItems.add(new ClipData.Item("D"));
+            selectableItems.add(new ClipData.Item("Dm"));
+        } else if (chosenChord == getView().findViewById(R.id.chordE)) {
+            selectableItems.add(new ClipData.Item("E"));
+            selectableItems.add(new ClipData.Item("Em"));
+        } else if (chosenChord == getView().findViewById(R.id.chordF)) {
+            selectableItems.add(new ClipData.Item("F"));
+            selectableItems.add(new ClipData.Item("Fm"));
+        } else if (chosenChord == getView().findViewById(R.id.chordG)) {
+            selectableItems.add(new ClipData.Item("G"));
+            selectableItems.add(new ClipData.Item("Gm"));
+        } else if (chosenChord == getView().findViewById(R.id.chordH)) {
+            selectableItems.add(new ClipData.Item("H"));
+            selectableItems.add(new ClipData.Item("Hm"));
+        } else if (chosenChord == getView().findViewById(R.id.chordA)) {
+            selectableItems.add(new ClipData.Item("A"));
+            selectableItems.add(new ClipData.Item("Am"));
+        } else {
+            selectableItems.add(new ClipData.Item(""));
+        }
+        return selectableItems;
+    }
+
+
+    @Override
+    public void onItemSelected(SelectableChord selectableChord) {
+
+        List<ClipData.Item> selectedItems = adapter.getSelectedChords();
+        Snackbar.make(recyclerView, "Selected item is " + selectableChord.getChord() +
+                ", Totally  selectem item count is " + selectedItems.size(), Snackbar.LENGTH_LONG).show();
     }
 }
 
