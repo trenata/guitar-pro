@@ -4,6 +4,8 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothSocket;
 import android.util.Log;
 
+import androidx.annotation.Nullable;
+
 import com.guitar.guitarpro.model.Chord;
 
 import java.io.IOException;
@@ -14,6 +16,7 @@ public class RealGuitarConnectionManager implements GuitarConnectionManager {
 
     private static final String DEVICE_ID = "00:18:E4:34:BE:5D";
     private static RealGuitarConnectionManager INSTANCE;
+    @Nullable
     private BluetoothSocket bluetoothSocket;
 
     private RealGuitarConnectionManager() {
@@ -29,7 +32,7 @@ public class RealGuitarConnectionManager implements GuitarConnectionManager {
 
     @Override
     public boolean isConnected() {
-        return bluetoothSocket.isConnected();
+        return bluetoothSocket != null && bluetoothSocket.isConnected();
     }
 
     @Override
@@ -58,7 +61,11 @@ public class RealGuitarConnectionManager implements GuitarConnectionManager {
     @Override
     public void disconnect() {
         try {
-            bluetoothSocket.close();
+            if (bluetoothSocket != null) {
+                bluetoothSocket.close();
+            } else {
+                Log.e("RealConnectionManager", "Couldn't disconnect. Socket is null.");
+            }
         } catch (IOException e) {
             Log.e("RealConnectionManager", "Couldn't disconnect: " + e.getMessage(), e);
         }

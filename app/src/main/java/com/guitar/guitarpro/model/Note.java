@@ -21,27 +21,27 @@ public final class Note {
         this.color = color;
     }
 
-    public int getStringIndex() {
+    int getStringIndex() {
         return stringIndex;
     }
 
-    public int getFretIndex() {
+    int getFretIndex() {
         return fretIndex;
     }
 
     public char getColor() {
         switch (color) {
             case RED:
-                return 'A';
+                return 'R';
             case GREEN:
-                return 'B';
+                return 'G';
             case BLUE:
-                return 'C';
+                return 'B';
             case YELLOW:
-                return 'D';
+                return 'Y';
             case WHITE:
             default:
-                return 'E';
+                return 'W';
         }
     }
 }
