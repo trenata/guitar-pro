@@ -1,111 +1,45 @@
 package com.guitar.guitarpro;
 
-import android.content.Context;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckedTextView;
-
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import com.guitar.guitarpro.model.SelectableChord;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 public class ChordsAdapter extends RecyclerView.Adapter<ChordsAdapter.ChordViewHolder> {
-    private Context mContext;
-    private String[] mChordList;
-    OnItemSelectedListener listener;
-    private List<SelectableChord> mValues;
 
     public interface OnItemSelectedListener {
 
         void onItemSelected(SelectableChord item);
     }
 
+    private final OnItemSelectedListener listener;
+    private List<SelectableChord> mValues;
 
-    public static class ChordViewHolder extends RecyclerView.ViewHolder {
-
-        private CheckedTextView mChordName;
-        SelectableChord mChord;
-        OnItemSelectedListener itemSelectedListener;
-
-        public ChordViewHolder(View itemView, OnItemSelectedListener listener) {
-            super(itemView);
-
-            itemSelectedListener = listener;
-
-            mChordName = itemView.findViewById(R.id.chord_text);
-
-            mChordName.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    setChecked(true);
-
-                    itemSelectedListener.onItemSelected(mChord);
-
-                }
-            });
-        }
-
-        public void setChecked(boolean value) {
-            if (value) {
-                mChordName.setBackgroundColor(R.drawable.chord_bg);
-            } else {
-                mChordName.setBackground(null);
-            }
-            mChord.setSelected(value);
-            mChordName.setChecked(value);
-        }
-
-        private void bind(String chordName) {
-            mChordName.setText(chordName);
-        }
-    }
-
-    public ChordsAdapter(OnItemSelectedListener listener) {
+    ChordsAdapter(OnItemSelectedListener listener) {
         this.listener = listener;
         mValues = new ArrayList<>();
     }
 
+    @NonNull
     @Override
-    public ChordViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_item,
-                parent, false);
-        return new ChordViewHolder(view, (OnItemSelectedListener) this);
+    public ChordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new ChordViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_item, parent, false), new ChordViewHolder.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(int position) {
+                listener.onItemSelected(mValues.get(position));
+            }
+        });
     }
 
     @Override
-    public void onBindViewHolder(final ChordViewHolder viewHolder, int position) {
-//        holder.bind(mChordList[position]);
-//
-//        holder.mChordName.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                holder.mChordName.toggle();
-////                // elkuldeni az Arduinonak
-//                System.out.println(determineChordCode(holder.mChordName));
-//                makeNote(determineChordCode(holder.mChordName));
-////                if(holder.mChordName.getText() == "C")
-////                    notesCode = "22A23B24C";
-//            }
-//        });
-
-        ChordViewHolder holder = viewHolder;
-        SelectableChord selectableItem = mValues.get(position);
-        String name = selectableItem.getChord();
-        holder.mChordName.setText(name);
-
-        TypedValue value = new TypedValue();
-        holder.mChordName.getContext().getTheme().resolveAttribute(android.R.attr.listChoiceIndicatorSingle, value, true);
-        int checkMarkDrawableResId = value.resourceId;
-        holder.mChordName.setCheckMarkDrawable(checkMarkDrawableResId);
-
-        holder.mChord = selectableItem;
-        holder.setChecked(holder.mChord.isSelected());
+    public void onBindViewHolder(@NonNull final ChordViewHolder viewHolder, int position) {
+        viewHolder.bind(mValues.get(position));
     }
 
     @Override
@@ -113,63 +47,37 @@ public class ChordsAdapter extends RecyclerView.Adapter<ChordsAdapter.ChordViewH
         return mValues.size();
     }
 
-    public void setChords(List<SelectableChord> mValues) {
+    void setChords(List<SelectableChord> mValues) {
         this.mValues = mValues;
         notifyDataSetChanged();
     }
 
+    static class ChordViewHolder extends RecyclerView.ViewHolder {
+
+        public interface OnItemSelectedListener {
+
+            void onItemSelected(int position);
+        }
+
+        private CheckedTextView mChordName;
+
+        ChordViewHolder(View itemView, final OnItemSelectedListener listener) {
+            super(itemView);
+            mChordName = itemView.findViewById(R.id.chord_text);
+            mChordName.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    final int adapterPosition = getAdapterPosition();
+                    if (adapterPosition != RecyclerView.NO_POSITION) {
+                        listener.onItemSelected(adapterPosition);
+                    }
+                }
+            });
+        }
+
+        void bind(SelectableChord chord) {
+            mChordName.setText(chord.getChordName());
+            mChordName.setChecked(chord.isSelected());
+        }
+    }
 }
-
-
-//    public int determineNoteNumber(CheckedTextView mChordName) {
-//        if (mChordName.getText() == "C" || mChordName.getText() == "E" || mChordName.getText() == "A" || mChordName.getText() == "G" || mChordName.getText() == "Am" || mChordName.getText() == "D" || mChordName.getText() == "Dm") {
-//            return 3;
-//        }
-//        if (mChordName.getText() == "Cm" || mChordName.getText() == "H" || mChordName.getText() == "Hm" || mChordName.getText() == "F") {
-//            return 9;
-//        }
-//        if (mChordName.getText() == "Fm" || mChordName.getText() == "Gm") {
-//            return 8;
-//        }
-//        return 2;
-//    }
-
-//    public String determineChordCode(CheckedTextView mChordname) {
-//        String code = "";
-//        if (mChordname.getText() == "C") {
-//            code = "21A42B53C";
-//        } else {
-//            if (mChordname.getText() == "A") {
-//                code = "22C32B42A";
-//            } else {
-//                if (mChordname.getText() == "Em") {
-//                    code = "52A42B";
-//                }
-//            }
-//        }
-//        return code;
-//    }
-//
-//    public Color color(char colorCode) {
-//        switch (colorCode) {
-//            case 'A':
-//                return Color.RED;
-//            case 'B':
-//                return Color.BLUE;
-//            case 'C':
-//                return Color.GREEN;
-//            case 'D':
-//                return Color.WHITE;
-//            default:
-//                return Color.YELLOW;
-//        }
-//    }
-//
-//    public void makeNote(String chordCode) {
-//        char[] chordCodeArray = chordCode.toCharArray();
-//
-//        for (int i = 0; i < chordCodeArray.length; i += 3) {
-//            new Chord.Builder().addNote(new Note(chordCodeArray[i] - '0', chordCodeArray[i + 1] - '0', color(chordCodeArray[i + 2]))).build();
-//        }
-//    }
-

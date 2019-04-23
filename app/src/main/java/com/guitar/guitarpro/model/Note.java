@@ -3,7 +3,7 @@ package com.guitar.guitarpro.model;
 public final class Note {
     private static final int MIN_STRING_INDEX = 1;
     private static final int MAX_STRING_INDEX = 6;
-    private static final int MIN_FRET_INDEX = 1;
+    private static final int MIN_FRET_INDEX = 0;
     private static final int MAX_FRET_INDEX = 5;
     private final int stringIndex;
     private final int fretIndex;
