@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        tools:ignore="MissingConstraints" >
+        tools:ignore="MissingConstraints">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -20,10 +20,10 @@
             android:layout_gravity="end"
             android:layout_marginTop="@dimen/connection_margins"
             android:layout_marginEnd="@dimen/connection_margins"
-            android:onClick="openConnectionActivity"
-            android:src="@drawable/ic_bluetooth_black_24dp"
             android:minWidth="24dp"
-            android:minHeight="24dp"/>
+            android:minHeight="24dp"
+            android:onClick="openConnectionActivity"
+            android:src="@drawable/ic_bluetooth_black_24dp" />
 
     </Toolbar>
 
@@ -31,6 +31,7 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:itemIconTint="@color/bottom_navigation_color"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

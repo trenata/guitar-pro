@@ -8,10 +8,12 @@
         android:title="@string/bottom_nav_chords" />
     <item
         android:id="@+id/scales"
+        android:enabled="false"
         android:icon="@drawable/ic_reorder_black_24dp"
         android:title="@string/bottom_nav_scales" />
     <item
         android:id="@+id/songs"
+        android:enabled="false"
         android:icon="@drawable/ic_queue_music_black_24dp"
         android:title="@string/bottom_nav_songs" />
     <item

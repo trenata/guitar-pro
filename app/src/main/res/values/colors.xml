@@ -10,5 +10,8 @@
     <color name="grey">#555555</color>
     <color name="red">#ff0000</color>
     <color name="darkBlack">#222222</color>
-    <color name="lightBlack">#FF999999</color>
+    <color name="lightBlack">#FF999999</color>]
+    <color name="bottom_nav_enabled">#333333</color>
+    <color name="bottom_nav_disabled">#BBBBBB</color>
+
 </resources>
