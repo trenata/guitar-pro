@@ -7,7 +7,7 @@ public class MockGuitarConnectionManager implements GuitarConnectionManager {
 
     private static MockGuitarConnectionManager INSTANCE;
 
-    public MockGuitarConnectionManager() {
+    private MockGuitarConnectionManager() {
         // Avoids direct instantiation
     }
 
