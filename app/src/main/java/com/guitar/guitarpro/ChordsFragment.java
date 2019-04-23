@@ -81,41 +81,41 @@ public class ChordsFragment extends Fragment implements ChordsAdapter.OnItemSele
         switch (selectedKey) {
             case C:
                 selectableItems.add(generateSelectableChord(new Chord.Builder("C")
-                        .addNote(new Note(6, 3, Color.RED))
-                        .addNote(new Note(5, 2, Color.GREEN))
-                        .addNote(new Note(4, 0, Color.WHITE))
-                        .addNote(new Note(3, 1, Color.BLUE))
-                        .addNote(new Note(2, 0, Color.WHITE))
+                        .addNote(new Note(5, 3, Color.BLUE))
+                        .addNote(new Note(4, 2, Color.GREEN))
+                        .addNote(new Note(3, 0, Color.WHITE))
+                        .addNote(new Note(2, 1, Color.RED))
+                        .addNote(new Note(1, 0, Color.WHITE))
                         .build(), selectedChordName));
 
                 selectableItems.add(generateSelectableChord(new Chord.Builder("C7")
-                        .addNote(new Note(6, 3, Color.BLUE))
-                        .addNote(new Note(5, 2, Color.GREEN))
-                        .addNote(new Note(4, 3, Color.YELLOW))
-                        .addNote(new Note(3, 1, Color.RED))
-                        .addNote(new Note(2, 0, Color.WHITE))
+                        .addNote(new Note(5, 3, Color.BLUE))
+                        .addNote(new Note(4, 2, Color.GREEN))
+                        .addNote(new Note(3, 3, Color.YELLOW))
+                        .addNote(new Note(2, 1, Color.RED))
+                        .addNote(new Note(1, 0, Color.WHITE))
                         .build(), selectedChordName));
                 break;
             case D:
                 selectableItems.add(generateSelectableChord(new Chord.Builder("D")
-                        .addNote(new Note(6, 0, Color.WHITE))
-                        .addNote(new Note(5, 2, Color.RED))
-                        .addNote(new Note(4, 3, Color.BLUE))
-                        .addNote(new Note(3, 2, Color.GREEN))
+                        .addNote(new Note(4, 0, Color.WHITE))
+                        .addNote(new Note(3, 2, Color.RED))
+                        .addNote(new Note(2, 3, Color.BLUE))
+                        .addNote(new Note(1, 2, Color.GREEN))
                         .build(), selectedChordName));
 
                 selectableItems.add(generateSelectableChord(new Chord.Builder("Dm")
-                        .addNote(new Note(6, 0, Color.WHITE))
-                        .addNote(new Note(5, 2, Color.GREEN))
-                        .addNote(new Note(4, 3, Color.BLUE))
-                        .addNote(new Note(3, 1, Color.RED))
+                        .addNote(new Note(4, 0, Color.WHITE))
+                        .addNote(new Note(3, 2, Color.GREEN))
+                        .addNote(new Note(2, 3, Color.BLUE))
+                        .addNote(new Note(1, 1, Color.RED))
                         .build(), selectedChordName));
 
                 selectableItems.add(generateSelectableChord(new Chord.Builder("D7")
-                        .addNote(new Note(6, 0, Color.WHITE))
-                        .addNote(new Note(5, 2, Color.GREEN))
-                        .addNote(new Note(4, 1, Color.RED))
-                        .addNote(new Note(3, 2, Color.BLUE))
+                        .addNote(new Note(4, 0, Color.WHITE))
+                        .addNote(new Note(3, 2, Color.GREEN))
+                        .addNote(new Note(2, 1, Color.RED))
+                        .addNote(new Note(1, 2, Color.BLUE))
                         .build(), selectedChordName));
                 break;
             case E:
@@ -130,46 +130,47 @@ public class ChordsFragment extends Fragment implements ChordsAdapter.OnItemSele
 
                 selectableItems.add(generateSelectableChord(new Chord.Builder("Em")
                         .addNote(new Note(6, 0, Color.WHITE))
-                        .addNote(new Note(5, 0, Color.WHITE))
-                        .addNote(new Note(4, 0, Color.WHITE))
-                        .addNote(new Note(3, 3, Color.BLUE))
-                        .addNote(new Note(2, 2, Color.GREEN))
+                        .addNote(new Note(5, 2, Color.GREEN))
+                        .addNote(new Note(4, 2, Color.BLUE))
+                        .addNote(new Note(3, 0, Color.WHITE))
+                        .addNote(new Note(2, 0, Color.WHITE))
                         .addNote(new Note(1, 0, Color.WHITE))
                         .build(), selectedChordName));
 
                 selectableItems.add(generateSelectableChord(new Chord.Builder("E7")
                         .addNote(new Note(6, 0, Color.WHITE))
-                        .addNote(new Note(5, 0, Color.WHITE))
-                        .addNote(new Note(4, 1, Color.RED))
-                        .addNote(new Note(3, 0, Color.WHITE))
-                        .addNote(new Note(2, 2, Color.GREEN))
+                        .addNote(new Note(5, 2, Color.GREEN))
+                        .addNote(new Note(4, 0, Color.WHITE))
+                        .addNote(new Note(3, 1, Color.RED))
+                        .addNote(new Note(2, 0, Color.WHITE))
                         .addNote(new Note(1, 0, Color.WHITE))
                         .build(), selectedChordName));
                 break;
             case F:
                 selectableItems.add(generateSelectableChord(new Chord.Builder("F")
-                        .addNote(new Note(6, 3, Color.BLUE))
-                        .addNote(new Note(5, 2, Color.GREEN))
-                        .addNote(new Note(4, 1, Color.RED))
-                        .addNote(new Note(3, 1, Color.RED))
+                        .addNote(new Note(4, 3, Color.BLUE))
+                        .addNote(new Note(3, 2, Color.GREEN))
+                        .addNote(new Note(2, 1, Color.RED))
+                        .addNote(new Note(1, 1, Color.RED))
                         .build(), selectedChordName));
 
                 selectableItems.add(generateSelectableChord(new Chord.Builder("Fm")
                         .addNote(new Note(6, 1, Color.RED))
-                        .addNote(new Note(5, 4, Color.GREEN))
-                        .addNote(new Note(4, 4, Color.BLUE))
-                        .addNote(new Note(3, 2, Color.RED))
-                        .addNote(new Note(2, 2, Color.RED))
-                        .addNote(new Note(1, 2, Color.RED))
+                        .addNote(new Note(5, 3, Color.GREEN))
+                        .addNote(new Note(4, 3, Color.BLUE))
+                        .addNote(new Note(3, 1, Color.RED))
+                        .addNote(new Note(2, 1, Color.RED))
+                        .addNote(new Note(1, 1, Color.RED))
                         .build(), selectedChordName));
 
                 selectableItems.add(generateSelectableChord(new Chord.Builder("F7")
                         .addNote(new Note(6, 1, Color.RED))
                         .addNote(new Note(5, 3, Color.BLUE))
-                        .addNote(new Note(4, 2, Color.GREEN))
-                        .addNote(new Note(3, 3, Color.YELLOW))
+                        .addNote(new Note(4, 1, Color.RED))
+                        .addNote(new Note(3, 2, Color.GREEN))
+                        .addNote(new Note(2, 1, Color.RED))
+                        .addNote(new Note(1, 1, Color.RED))
                         .build(), selectedChordName));
-                break;
             case G:
                 selectableItems.add(generateSelectableChord(new Chord.Builder("G")
                         .addNote(new Note(6, 3, Color.GREEN))
@@ -191,11 +192,11 @@ public class ChordsFragment extends Fragment implements ChordsAdapter.OnItemSele
                 break;
             case A:
                 selectableItems.add(generateSelectableChord(new Chord.Builder("A")
-                        .addNote(new Note(6, 0, Color.WHITE))
-                        .addNote(new Note(5, 2, Color.BLUE))
-                        .addNote(new Note(4, 2, Color.RED))
-                        .addNote(new Note(3, 2, Color.GREEN))
-                        .addNote(new Note(2, 0, Color.WHITE))
+                        .addNote(new Note(5, 0, Color.WHITE))
+                        .addNote(new Note(4, 2, Color.BLUE))
+                        .addNote(new Note(3, 2, Color.RED))
+                        .addNote(new Note(2, 2, Color.GREEN))
+                        .addNote(new Note(1, 0, Color.WHITE))
                         .build(), selectedChordName));
 
                 selectableItems.add(generateSelectableChord(new Chord.Builder("Am")
@@ -207,34 +208,34 @@ public class ChordsFragment extends Fragment implements ChordsAdapter.OnItemSele
                         .build(), selectedChordName));
 
                 selectableItems.add(generateSelectableChord(new Chord.Builder("A7")
-                        .addNote(new Note(6, 0, Color.WHITE))
-                        .addNote(new Note(5, 2, Color.BLUE))
-                        .addNote(new Note(4, 0, Color.WHITE))
-                        .addNote(new Note(3, 2, Color.GREEN))
-                        .addNote(new Note(2, 0, Color.WHITE))
+                        .addNote(new Note(5, 0, Color.WHITE))
+                        .addNote(new Note(4, 2, Color.BLUE))
+                        .addNote(new Note(3, 0, Color.WHITE))
+                        .addNote(new Note(2, 2, Color.GREEN))
+                        .addNote(new Note(1, 0, Color.WHITE))
                         .build(), selectedChordName));
                 break;
             case H:
                 selectableItems.add(generateSelectableChord(new Chord.Builder("H")
-                        .addNote(new Note(6, 4, Color.YELLOW))
-                        .addNote(new Note(5, 4, Color.BLUE))
-                        .addNote(new Note(4, 4, Color.GREEN))
-                        .addNote(new Note(3, 2, Color.RED))
+                        .addNote(new Note(4, 4, Color.YELLOW))
+                        .addNote(new Note(3, 4, Color.BLUE))
+                        .addNote(new Note(2, 4, Color.GREEN))
+                        .addNote(new Note(1, 2, Color.RED))
                         .build(), selectedChordName));
 
                 selectableItems.add(generateSelectableChord(new Chord.Builder("Hm")
-                        .addNote(new Note(6, 4, Color.BLUE))
-                        .addNote(new Note(5, 4, Color.YELLOW))
-                        .addNote(new Note(4, 3, Color.GREEN))
-                        .addNote(new Note(3, 2, Color.RED))
+                        .addNote(new Note(4, 4, Color.BLUE))
+                        .addNote(new Note(3, 4, Color.YELLOW))
+                        .addNote(new Note(2, 3, Color.GREEN))
+                        .addNote(new Note(1, 2, Color.RED))
                         .build(), selectedChordName));
 
                 selectableItems.add(generateSelectableChord(new Chord.Builder("H7")
-                        .addNote(new Note(6, 2, Color.GREEN))
-                        .addNote(new Note(5, 1, Color.RED))
-                        .addNote(new Note(4, 2, Color.BLUE))
-                        .addNote(new Note(3, 0, Color.WHITE))
-                        .addNote(new Note(2, 2, Color.YELLOW))
+                        .addNote(new Note(5, 2, Color.GREEN))
+                        .addNote(new Note(4, 1, Color.RED))
+                        .addNote(new Note(3, 2, Color.BLUE))
+                        .addNote(new Note(2, 0, Color.WHITE))
+                        .addNote(new Note(1, 2, Color.YELLOW))
                         .build(), selectedChordName));
                 break;
         }
