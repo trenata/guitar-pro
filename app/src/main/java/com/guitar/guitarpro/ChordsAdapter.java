@@ -21,7 +21,7 @@ public class ChordsAdapter extends RecyclerView.Adapter<ChordsAdapter.ChordViewH
     private final OnItemSelectedListener listener;
     private List<SelectableChord> mValues;
 
-    ChordsAdapter(OnItemSelectedListener listener) {
+    ChordsAdapter(@NonNull OnItemSelectedListener listener) {
         this.listener = listener;
         mValues = new ArrayList<>();
     }
@@ -29,12 +29,7 @@ public class ChordsAdapter extends RecyclerView.Adapter<ChordsAdapter.ChordViewH
     @NonNull
     @Override
     public ChordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ChordViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_item, parent, false), new ChordViewHolder.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(int position) {
-                listener.onItemSelected(mValues.get(position));
-            }
-        });
+        return new ChordViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_item, parent, false));
     }
 
     @Override
@@ -52,16 +47,11 @@ public class ChordsAdapter extends RecyclerView.Adapter<ChordsAdapter.ChordViewH
         notifyDataSetChanged();
     }
 
-    static class ChordViewHolder extends RecyclerView.ViewHolder {
-
-        public interface OnItemSelectedListener {
-
-            void onItemSelected(int position);
-        }
+    class ChordViewHolder extends RecyclerView.ViewHolder {
 
         private CheckedTextView mChordName;
 
-        ChordViewHolder(View itemView, final OnItemSelectedListener listener) {
+        ChordViewHolder(View itemView) {
             super(itemView);
             mChordName = itemView.findViewById(R.id.chord_text);
             mChordName.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +59,7 @@ public class ChordsAdapter extends RecyclerView.Adapter<ChordsAdapter.ChordViewH
                 public void onClick(View view) {
                     final int adapterPosition = getAdapterPosition();
                     if (adapterPosition != RecyclerView.NO_POSITION) {
-                        listener.onItemSelected(adapterPosition);
+                        listener.onItemSelected(mValues.get(adapterPosition));
                     }
                 }
             });
