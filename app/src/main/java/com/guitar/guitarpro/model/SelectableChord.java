@@ -1,17 +1,18 @@
 package com.guitar.guitarpro.model;
 
-import android.content.ClipData;
+public class SelectableChord {
 
-public class SelectableChord extends ChosenChord {
+    private boolean isSelected;
+    private final Chord chord;
 
-    private boolean isSelected = false;
-
-
-    public SelectableChord(ChosenChord chord, boolean isSelected) {
-        super(chord.getChord(), chord.getChosen());
+    public SelectableChord(Chord chord, boolean isSelected) {
+        this.chord = chord;
         this.isSelected = isSelected;
     }
 
+    public String getChordName() {
+        return chord.getName();
+    }
 
     public boolean isSelected() {
         return isSelected;

@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckedTextView;
 
-import com.guitar.guitarpro.ChordsAdapter.ChordViewHolder.OnItemSelectedListener;
-import com.guitar.guitarpro.model.ChosenChord;
 import com.guitar.guitarpro.model.SelectableChord;
 
 import java.util.ArrayList;
@@ -16,11 +14,16 @@ import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ChordsAdapter extends RecyclerView.Adapter<ChordsAdapter.ChordViewHolder> implements ChordsAdapter.ChordViewHolder.OnItemSelectedListener {
+public class ChordsAdapter extends RecyclerView.Adapter<ChordsAdapter.ChordViewHolder> {
     private Context mContext;
     private String[] mChordList;
     OnItemSelectedListener listener;
-    private final List<SelectableChord> mValues;
+    private List<SelectableChord> mValues;
+
+    public interface OnItemSelectedListener {
+
+        void onItemSelected(SelectableChord item);
+    }
 
 
     public static class ChordViewHolder extends RecyclerView.ViewHolder {
@@ -58,24 +61,14 @@ public class ChordsAdapter extends RecyclerView.Adapter<ChordsAdapter.ChordViewH
             mChordName.setChecked(value);
         }
 
-        public interface OnItemSelectedListener {
-
-            void onItemSelected(SelectableChord item);
-        }
-
         private void bind(String chordName) {
             mChordName.setText(chordName);
         }
     }
 
-    public ChordsAdapter(OnItemSelectedListener listener, List<ChosenChord> chords) {
+    public ChordsAdapter(OnItemSelectedListener listener) {
         this.listener = listener;
-
         mValues = new ArrayList<>();
-
-        for (ChosenChord item : chords) {
-            mValues.add(new SelectableChord(item, false));
-        }
     }
 
     @Override
@@ -120,32 +113,11 @@ public class ChordsAdapter extends RecyclerView.Adapter<ChordsAdapter.ChordViewH
         return mValues.size();
     }
 
-    public List<ChosenChord> getSelectedChords() {
-
-        List<ChosenChord> selectedItems = new ArrayList<>();
-        for (SelectableChord chord : mValues) {
-            if (chord.isSelected()) {
-                selectedItems.add(chord);
-            }
-        }
-        return selectedItems;
-    }
-
-
-    @Override
-    public void onItemSelected(SelectableChord item) {
-        for (SelectableChord selectableItem : mValues) {
-            if (!selectableItem.equals(item)
-                    && selectableItem.isSelected()) {
-                selectableItem.setSelected(false);
-            } else if (selectableItem.equals(item)
-                    && item.isSelected()) {
-                selectableItem.setSelected(true);
-            }
-        }
+    public void setChords(List<SelectableChord> mValues) {
+        this.mValues = mValues;
         notifyDataSetChanged();
-        listener.onItemSelected(item);
     }
+
 }
 
 
