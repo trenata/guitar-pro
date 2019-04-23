@@ -100,8 +100,8 @@ public class ChordsFragment extends Fragment implements ChordsAdapter.OnItemSele
                 selectableItems.add(generateSelectableChord(new Chord.Builder("D")
                         .addNote(new Note(3, 0, Color.WHITE))
                         .addNote(new Note(4, 2, Color.RED))
-                        .addNote(new Note(5, 3, Color.BLUE))
-                        .addNote(new Note(6, 2, Color.GREEN))
+                        .addNote(new Note(5, 3, Color.GREEN))
+                        .addNote(new Note(6, 2, Color.BLUE))
                         .build(), selectedChordName));
 
                 selectableItems.add(generateSelectableChord(new Chord.Builder("Dm")
@@ -200,10 +200,10 @@ public class ChordsFragment extends Fragment implements ChordsAdapter.OnItemSele
                         .build(), selectedChordName));
 
                 selectableItems.add(generateSelectableChord(new Chord.Builder("Am")
-                        .addNote(new Note(2, 0, Color.RED))
-                        .addNote(new Note(3, 2, Color.WHITE))
-                        .addNote(new Note(4, 2, Color.GREEN))
-                        .addNote(new Note(5, 1, Color.BLUE))
+                        .addNote(new Note(2, 0, Color.WHITE))
+                        .addNote(new Note(3, 2, Color.GREEN))
+                        .addNote(new Note(4, 2, Color.BLUE))
+                        .addNote(new Note(5, 1, Color.RED))
                         .addNote(new Note(6, 0, Color.WHITE))
                         .build(), selectedChordName));
 
