@@ -4,8 +4,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckedTextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.guitar.guitarpro.model.SelectableChord;
 
 import java.util.ArrayList;
@@ -66,7 +68,7 @@ public class ChordsAdapter extends RecyclerView.Adapter<ChordsAdapter.ChordViewH
         }
 
         void bind(SelectableChord chord) {
-            mChordName.setText(chord.getChordName());
+            mChordName.setText(chord.getChord().getName());
             mChordName.setChecked(chord.isSelected());
         }
     }

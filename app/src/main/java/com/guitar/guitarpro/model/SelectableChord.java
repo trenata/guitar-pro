@@ -10,8 +10,8 @@ public class SelectableChord {
         this.isSelected = isSelected;
     }
 
-    public String getChordName() {
-        return chord.getName();
+    public Chord getChord(){
+        return chord;
     }
 
     public boolean isSelected() {

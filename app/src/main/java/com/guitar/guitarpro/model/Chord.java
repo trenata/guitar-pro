@@ -20,6 +20,14 @@ public final class Chord {
         return name;
     }
 
+    public String getEncodedNotes() {
+        StringBuilder builder = new StringBuilder();
+        for (Note n : notes) {
+            builder.append(n.getFretIndex()).append(n.getStringIndex()).append(n.getColor());
+        }
+        return builder.toString();
+    }
+
     public static class Builder {
         private final List<Note> notes = new ArrayList<>();
         private final String name;

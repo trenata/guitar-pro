@@ -5,12 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckedTextView;
+
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.guitar.guitarpro.connectivity.RealGuitarConnectionManager;
 import com.guitar.guitarpro.model.*;
 
 import java.util.ArrayList;
@@ -241,6 +244,8 @@ public class ChordsFragment extends Fragment implements ChordsAdapter.OnItemSele
 
     @Override
     public void onItemSelected(SelectableChord selectableChord) {
-        adapter.setChords(generateSelectableChords(selectableChord.getChordName()));
+        adapter.setChords(generateSelectableChords(selectableChord.getChord().getName()));
+
+        RealGuitarConnectionManager.getInstance().sendChord(selectableChord.getChord());
     }
 }

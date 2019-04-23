@@ -84,7 +84,7 @@
         android:layout_marginBottom="@dimen/con_button_bottom"
         android:width="@dimen/con_button_width"
         android:height="@dimen/con_button_height"
-        android:onClick="showSnackBar"
+        android:onClick="pair"
         android:text="@string/connection_button_pair"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

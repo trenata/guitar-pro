@@ -28,4 +28,20 @@ public final class Note {
     public int getFretIndex() {
         return fretIndex;
     }
+
+    public char getColor() {
+        switch (color) {
+            case RED:
+                return 'A';
+            case GREEN:
+                return 'B';
+            case BLUE:
+                return 'C';
+            case YELLOW:
+                return 'D';
+            case WHITE:
+            default:
+                return 'E';
+        }
+    }
 }
