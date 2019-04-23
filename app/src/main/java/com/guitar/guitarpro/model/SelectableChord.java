@@ -2,7 +2,7 @@ package com.guitar.guitarpro.model;
 
 public class SelectableChord {
 
-    private boolean isSelected;
+    private final boolean isSelected;
     private final Chord chord;
 
     public SelectableChord(Chord chord, boolean isSelected) {
@@ -16,9 +16,5 @@ public class SelectableChord {
 
     public boolean isSelected() {
         return isSelected;
-    }
-
-    public void setSelected(boolean selected) {
-        isSelected = selected;
     }
 }

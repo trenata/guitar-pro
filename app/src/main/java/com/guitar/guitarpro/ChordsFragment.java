@@ -18,7 +18,6 @@ import java.util.List;
 
 public class ChordsFragment extends Fragment implements ChordsAdapter.OnItemSelectedListener {
 
-    private RecyclerView recyclerView;
     private ChordsAdapter adapter;
     private List<CheckedTextView> chords = new ArrayList<>();
     private Key selectedKey;
@@ -29,7 +28,7 @@ public class ChordsFragment extends Fragment implements ChordsAdapter.OnItemSele
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.chords_fragment, null, false);
+        return inflater.inflate(R.layout.chords_fragment, container, false);
     }
 
     @Override
@@ -43,7 +42,7 @@ public class ChordsFragment extends Fragment implements ChordsAdapter.OnItemSele
         setupChord(R.id.chordH, Key.H);
 
         adapter = new ChordsAdapter(this);
-        recyclerView = view.findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(adapter);
     }
