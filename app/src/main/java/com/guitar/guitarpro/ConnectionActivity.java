@@ -33,8 +33,7 @@ public class ConnectionActivity extends AppCompatActivity {
         });
     }
 
-    public void openMainActivity(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+    public void closeConnectionActivity(View view) {
+        finish();
     }
 }
