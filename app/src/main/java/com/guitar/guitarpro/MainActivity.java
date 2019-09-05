@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         preferences = UserPreferenceManager.getInstance(this);
 
         if (preferences.getLastScreen(lastScreen) == null) {
-            loadFragment(new SettingsFragment());
+            loadFragment(new MoreFragment());
             navigation.setSelectedItemId(R.id.settings);
 
             startActivity(new Intent(this, OnboardingActivity.class));
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
 
             case R.id.settings:
-                fragment = new SettingsFragment();
+                fragment = new MoreFragment();
                 preferences.setLastScreen(lastScreen, UserPreferenceManager.settings);
 
                 break;

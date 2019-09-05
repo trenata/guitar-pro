@@ -11,16 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class SettingsFragment extends Fragment {
+public class MoreFragment extends Fragment {
 
-    SettingsFragment() {
+    public MoreFragment() {
 
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.settings_fragment, container, false);
+        View view = inflater.inflate(R.layout.more_fragment, container, false);
         Button button = view.findViewById(R.id.see_onboarding);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

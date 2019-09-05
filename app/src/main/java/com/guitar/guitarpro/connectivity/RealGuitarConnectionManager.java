@@ -41,7 +41,8 @@ public class RealGuitarConnectionManager implements GuitarConnectionManager {
             BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
             if (bluetoothAdapter != null) {
                 bluetoothAdapter.enable();
-                bluetoothSocket = bluetoothAdapter.getRemoteDevice(DEVICE_ID).createInsecureRfcommSocketToServiceRecord(UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"));
+                bluetoothSocket = bluetoothAdapter.getRemoteDevice(DEVICE_ID)
+                        .createInsecureRfcommSocketToServiceRecord(UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"));
                 bluetoothAdapter.cancelDiscovery();
                 if (bluetoothSocket != null) {
                     bluetoothSocket.connect();
