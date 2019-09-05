@@ -245,6 +245,17 @@ public class ChordsFragment extends Fragment implements ChordsAdapter.OnItemSele
                         .build(), selectedChordName));
                 break;
         }
+        boolean isSelected = false;
+
+        for (int i = 0; i < selectableItems.size(); i++) {
+            if ((selectableItems.get(i).isSelected())) {
+                isSelected = true;
+            }
+        }
+        if (!isSelected) {
+            selectableItems.get(0).setIsSelected(true);
+        }
+
         return selectableItems;
     }
 
