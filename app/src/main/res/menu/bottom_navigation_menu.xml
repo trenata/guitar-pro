@@ -19,7 +19,7 @@
         android:title="@string/bottom_nav_songs" />
     <item
         android:id="@+id/settings"
-        android:icon="@drawable/ic_settings_black_24dp"
+        android:icon="@drawable/ic_more_horiz_black_24dp"
         android:title="@string/bottom_nav_more" />
 
 </menu>
