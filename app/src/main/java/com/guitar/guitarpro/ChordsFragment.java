@@ -175,6 +175,7 @@ public class ChordsFragment extends Fragment implements ChordsAdapter.OnItemSele
                         .addNote(new Note(5, 1, Color.RED))
                         .addNote(new Note(6, 1, Color.RED))
                         .build(), selectedChordName));
+                break;
             case G:
                 selectableItems.add(generateSelectableChord(new Chord.Builder("G")
                         .addNote(new Note(1, 3, Color.GREEN))

@@ -10,6 +10,7 @@ public interface GuitarConnectionManager {
         void onConnected();
 
         void onConnectionError();
+
     }
 
     boolean isConnected();

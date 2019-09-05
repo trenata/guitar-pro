@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/connection"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="closeConnectionActivity"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/con_close_sides"
+        android:layout_marginTop="@dimen/con_close_sides"
+        android:minWidth="@dimen/con_close_wh"
+        android:minHeight="@dimen/con_close_wh"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/con_image_sides"
+        android:layout_marginTop="@dimen/con_image_top"
+        android:layout_marginEnd="@dimen/con_image_sides"
+        android:layout_marginBottom="@dimen/con_image_bottom"
+        android:src="@drawable/ic_connection"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/con_title_sides"
+        android:layout_marginTop="@dimen/con_title_top"
+        android:layout_marginEnd="@dimen/con_title_sides"
+        android:layout_marginBottom="@dimen/con_title_bottom"
+        android:width="@dimen/con_title_width"
+        android:height="@dimen/con_title_height"
+        android:text="@string/connection_title_unpair"
+        android:textAlignment="center"
+        android:textColor="#FF393939"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/con_desc_sides"
+        android:layout_marginTop="@dimen/con_desc_top"
+        android:layout_marginEnd="@dimen/con_desc_sides"
+        android:layout_marginBottom="@dimen/con_desc_bottom"
+        android:width="@dimen/con_desc_width"
+        android:height="@dimen/con_desc_height"
+        android:text="@string/connection_description_unpair"
+        android:textAlignment="center"
+        android:textColor="#FF999999"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/con_button_sides"
+        android:layout_marginTop="@dimen/con_button_top"
+        android:layout_marginEnd="@dimen/con_button_sides"
+        android:layout_marginBottom="@dimen/con_button_bottom"
+        android:width="@dimen/con_button_width"
+        android:height="@dimen/con_button_height"
+        android:onClick="unPair"
+        android:text="@string/connection_button_unpair"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -40,8 +40,8 @@
     <string name="connection_description">Make sure to turn on your Arduino.\nOnce it’s done, you can initialise the connection.</string>
     <string name="connection_button_pair">PAIR</string>
 
-    <string name="connection_title_unpair">Unpair your device</string>
-    <string name="connection_description_unpair">To disconnect safely from the Arduino make sure you unpair your device first.</string>
+    <string name="connection_title_unpair">You are paired</string>
+    <string name="connection_description_unpair">If you finished your learning session for today, you can disconnect your device.</string>
     <string name="connection_button_unpair">UNPAIR</string>
 
     <string name="error">Something went wrong. Please try again.</string>

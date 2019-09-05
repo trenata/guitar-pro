@@ -1,6 +1,5 @@
 package com.guitar.guitarpro;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -8,7 +7,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.guitar.guitarpro.connectivity.GuitarConnectionManager;
-import com.guitar.guitarpro.connectivity.RealGuitarConnectionManager;
+import com.guitar.guitarpro.connectivity.MockGuitarConnectionManager;
 
 public class ConnectionActivity extends AppCompatActivity {
 
@@ -20,10 +19,11 @@ public class ConnectionActivity extends AppCompatActivity {
     }
 
     public void pair(View view) {
-        RealGuitarConnectionManager.getInstance().connect(new GuitarConnectionManager.ConnectionCallback() {
+        MockGuitarConnectionManager.getInstance().connect(new GuitarConnectionManager.ConnectionCallback() {
             @Override
             public void onConnected() {
                 Toast.makeText(ConnectionActivity.this, "Connected", Toast.LENGTH_LONG).show();
+                setContentView(R.layout.disconnected_activity);
             }
 
             @Override
@@ -31,6 +31,13 @@ public class ConnectionActivity extends AppCompatActivity {
                 Toast.makeText(ConnectionActivity.this, "Connection error", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    public void unPair(View view) {
+
+        Toast.makeText(ConnectionActivity.this, "Disconnected", Toast.LENGTH_LONG).show();
+        setContentView(R.layout.connection_activity);
+        MockGuitarConnectionManager.getInstance().disconnect();
     }
 
     public void closeConnectionActivity(View view) {
