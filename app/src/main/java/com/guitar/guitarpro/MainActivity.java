@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.guitar.guitarpro.connectivity.MockGuitarConnectionManager;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -65,6 +67,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             navigation.setSelectedItemId(id);
         }
 
+        ImageView bluestoothIcon = findViewById(R.id.bluetooth_icon);
+
+        if (MockGuitarConnectionManager.getInstance().isConnected()) {
+            bluestoothIcon.setImageResource(R.drawable.ic_bluetooth_connected_blue_24dp);
+        } else {
+            bluestoothIcon.setImageResource(R.drawable.ic_bluetooth_black_24dp);
+        }
     }
 
     @Override
@@ -110,7 +119,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         return false;
     }
-
 
     public void openConnectionActivity(View view) {
         Intent intent = new Intent(this, ConnectionActivity.class);

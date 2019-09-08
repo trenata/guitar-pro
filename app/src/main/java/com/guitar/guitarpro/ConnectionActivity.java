@@ -4,18 +4,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.guitar.guitarpro.connectivity.GuitarConnectionManager;
 import com.guitar.guitarpro.connectivity.MockGuitarConnectionManager;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ConnectionActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.connection_activity);
+        if (MockGuitarConnectionManager.getInstance().isConnected()) {
+            setContentView(R.layout.connection_activity);
+        } else {
+            setContentView(R.layout.disconnected_activity);
+        }
     }
 
     public void pair(View view) {
