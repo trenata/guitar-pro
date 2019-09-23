@@ -15,7 +15,7 @@ public class ConnectionActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (MockGuitarConnectionManager.getInstance().isConnected()) {
-            setContentView(R.layout.connection_activity);
+            setContentView(R.layout.connected_activity);
         } else {
             setContentView(R.layout.disconnected_activity);
         }
@@ -26,7 +26,7 @@ public class ConnectionActivity extends AppCompatActivity {
             @Override
             public void onConnected() {
                 Toast.makeText(ConnectionActivity.this, "Connected", Toast.LENGTH_LONG).show();
-                setContentView(R.layout.disconnected_activity);
+                setContentView(R.layout.connected_activity);
             }
 
             @Override
@@ -39,7 +39,7 @@ public class ConnectionActivity extends AppCompatActivity {
     public void unPair(View view) {
 
         Toast.makeText(ConnectionActivity.this, "Disconnected", Toast.LENGTH_LONG).show();
-        setContentView(R.layout.connection_activity);
+        setContentView(R.layout.disconnected_activity);
         MockGuitarConnectionManager.getInstance().disconnect();
     }
 

@@ -7,6 +7,8 @@ public class MockGuitarConnectionManager implements GuitarConnectionManager {
 
     private static MockGuitarConnectionManager INSTANCE;
 
+    private boolean isConnected = false;
+
     private MockGuitarConnectionManager() {
         // Avoids direct instantiation
     }
@@ -20,7 +22,6 @@ public class MockGuitarConnectionManager implements GuitarConnectionManager {
 
     @Override
     public boolean isConnected() {
-        boolean isConnected = false;
         System.out.println("MockGuitarConnectionManager.isConnected: " + isConnected);
         return isConnected;
     }
@@ -28,11 +29,13 @@ public class MockGuitarConnectionManager implements GuitarConnectionManager {
     @Override
     public void connect(ConnectionCallback connectionCallback) {
         System.out.println("MockGuitarConnectionManager.connect");
+        isConnected = true;
         connectionCallback.onConnected();
     }
 
     @Override
     public void disconnect() {
+        isConnected = false;
         System.out.println("MockGuitarConnectionManager.disconnect");
     }
 

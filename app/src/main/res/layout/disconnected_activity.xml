@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/connection"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,10 +9,10 @@
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="closeConnectionActivity"
         android:background="@color/colorPrimary"
+        android:onClick="closeConnectionActivity"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -49,7 +48,7 @@
         android:layout_marginBottom="@dimen/con_title_bottom"
         android:width="@dimen/con_title_width"
         android:height="@dimen/con_title_height"
-        android:text="@string/connection_title_unpair"
+        android:text="@string/disconnected_title"
         android:textAlignment="center"
         android:textColor="#FF393939"
         android:textSize="20sp"
@@ -68,7 +67,7 @@
         android:layout_marginBottom="@dimen/con_desc_bottom"
         android:width="@dimen/con_desc_width"
         android:height="@dimen/con_desc_height"
-        android:text="@string/connection_description_unpair"
+        android:text="@string/disconnected_description"
         android:textAlignment="center"
         android:textColor="#FF999999"
         android:textSize="16sp"
@@ -86,8 +85,8 @@
         android:layout_marginBottom="@dimen/con_button_bottom"
         android:width="@dimen/con_button_width"
         android:height="@dimen/con_button_height"
-        android:onClick="unPair"
-        android:text="@string/connection_button_unpair"
+        android:onClick="pair"
+        android:text="@string/disconnected_button_pair"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

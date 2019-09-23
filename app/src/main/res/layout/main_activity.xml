@@ -24,7 +24,7 @@
             android:minWidth="24dp"
             android:minHeight="24dp"
             android:onClick="openConnectionActivity"
-            android:src="@drawable/ic_bluetooth_black_24dp" />
+            android:src="@drawable/ic_bluetooth_disconnected_24dp" />
 
     </Toolbar>
 

@@ -66,13 +66,18 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
             navigation.setSelectedItemId(id);
         }
+    }
 
-        ImageView bluestoothIcon = findViewById(R.id.bluetooth_icon);
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        ImageView bluetoothIcon = findViewById(R.id.bluetooth_icon);
 
         if (MockGuitarConnectionManager.getInstance().isConnected()) {
-            bluestoothIcon.setImageResource(R.drawable.ic_bluetooth_connected_blue_24dp);
+            bluetoothIcon.setImageResource(R.drawable.ic_bluetooth_connected_24dp);
         } else {
-            bluestoothIcon.setImageResource(R.drawable.ic_bluetooth_black_24dp);
+            bluetoothIcon.setImageResource(R.drawable.ic_bluetooth_disconnected_24dp);
         }
     }
 

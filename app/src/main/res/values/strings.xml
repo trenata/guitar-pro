@@ -36,18 +36,18 @@
 
     <string name="chords_screen_text_view">Chords</string>
 
-    <string name="connection_title">Pair your device</string>
-    <string name="connection_description">Make sure to turn on your Arduino.\nOnce it’s done, you can initialise the connection.</string>
-    <string name="connection_button_pair">PAIR</string>
+    <string name="disconnected_title">Pair your device</string>
+    <string name="disconnected_description">Make sure to turn on your Arduino.\nOnce it’s done, you can initialise the connection.</string>
+    <string name="disconnected_button_pair">PAIR</string>
 
-    <string name="connection_title_unpair">You are paired</string>
-    <string name="connection_description_unpair">If you finished your learning session for today, you can disconnect your device.</string>
-    <string name="connection_button_unpair">UNPAIR</string>
+    <string name="connected_title">You are paired</string>
+    <string name="connected_description">If you finished your learning session for today, you can disconnect your device.</string>
+    <string name="connected_button_unpair">UNPAIR</string>
 
     <string name="error">Something went wrong. Please try again.</string>
 
-    <string name="settings_title">About us</string>
+    <string name="about_us">About us</string>
 
-    <string name="settings_hi">Hi!\n  We are Reni &amp; Ari</string>
-    <string name="settings_description">We are high school students from Cluj-Napoca. We have been working on this project since junior year of high school and about a year ago Halcyon Mobile offered us their help.\nWe hope this app can help some of you and we are working hard to further improve it." </string>
+    <string name="about_title">Hi!\n  We are Reni &amp; Ari</string>
+    <string name="about_description">We are high school students from Cluj-Napoca. We have been working on this project since junior year of high school and about a year ago Halcyon Mobile offered us their help.\nWe hope this app can help some of you and we are working hard to further improve it." </string>
 </resources>
