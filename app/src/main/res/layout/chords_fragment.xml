@@ -36,7 +36,8 @@
         android:text="@string/chordD"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="51"
-        app:layout_constraintCircleRadius="134dp" />
+        app:layout_constraintCircleRadius="134dp"
+        tools:ignore="MissingConstraints" />
 
     <CheckedTextView
         android:id="@+id/chordE"
@@ -46,7 +47,8 @@
         android:text="@string/chordE"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="102"
-        app:layout_constraintCircleRadius="134dp" />
+        app:layout_constraintCircleRadius="134dp"
+        tools:ignore="MissingConstraints" />
 
     <CheckedTextView
         android:id="@+id/chordF"
@@ -56,7 +58,8 @@
         android:text="@string/chordF"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="153"
-        app:layout_constraintCircleRadius="134dp" />
+        app:layout_constraintCircleRadius="134dp"
+        tools:ignore="MissingConstraints" />
 
     <CheckedTextView
         android:id="@+id/chordG"
@@ -66,7 +69,8 @@
         android:text="@string/chordG"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="205"
-        app:layout_constraintCircleRadius="134dp" />
+        app:layout_constraintCircleRadius="134dp"
+        tools:ignore="MissingConstraints" />
 
     <CheckedTextView
         android:id="@+id/chordH"
@@ -76,7 +80,8 @@
         android:text="@string/chordH"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="257"
-        app:layout_constraintCircleRadius="134dp" />
+        app:layout_constraintCircleRadius="134dp"
+        tools:ignore="MissingConstraints" />
 
     <CheckedTextView
         android:id="@+id/chordA"
@@ -86,7 +91,8 @@
         android:text="@string/chordA"
         app:layout_constraintCircle="@id/circle"
         app:layout_constraintCircleAngle="307"
-        app:layout_constraintCircleRadius="134dp" />
+        app:layout_constraintCircleRadius="134dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/chord_screen_text"
@@ -101,12 +107,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:orientation="horizontal"
         android:paddingStart="50dp"
         android:paddingEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chord_screen_text" />
 
 
