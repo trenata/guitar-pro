@@ -13,5 +13,6 @@
     <color name="lightBlack">#FF999999</color>]
     <color name="bottom_nav_enabled">#333333</color>
     <color name="bottom_nav_disabled">#BBBBBB</color>
+    <color name="colorMoreScreen">#FCC3B1</color>
 
 </resources>

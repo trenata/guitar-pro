@@ -7,60 +7,106 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
+    <TextView
+        android:id="@+id/dark_mode"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginVertical="1dp"
+        android:background="@color/colorMoreScreen"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/dark_mode"
+        android:textAlignment="textStart"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+
+        app:layout_constraintBottom_toTopOf="@+id/see_onboarding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dark_mode"
+        app:layout_constraintEnd_toEndOf="@+id/dark_mode"
+        app:layout_constraintTop_toTopOf="@+id/dark_mode" />
+
+    <TextView
         android:id="@+id/see_onboarding"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/bg_settings"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginVertical="1dp"
+        android:background="@color/colorMoreScreen"
+        android:gravity="center"
+        android:padding="20dp"
         android:text="@string/see_onboarding"
+        android:textAlignment="textStart"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/first_time_user_experience"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="8dp"
-        android:src="@drawable/about_us"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/about_title"
-        android:textAlignment="center"
-        android:textSize="16sp"
+        android:id="@+id/first_time_user_experience"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginVertical="1dp"
+        android:background="@color/colorMoreScreen"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/first_time_user_expreience"
+        android:textAlignment="textStart"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.328" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="58dp"
-        android:lineSpacingExtra="5sp"
-        android:text="@string/about_description"
-        android:textAlignment="center"
-        android:textSize="16sp"
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginVertical="1dp"
+        android:background="@color/colorMoreScreen"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/about_button"
+        android:textAlignment="textStart"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/first_time_user_experience" />
+
+    <TextView
+        android:id="@+id/share"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginVertical="1dp"
+        android:background="@color/colorMoreScreen"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/share"
+        android:textAlignment="textStart"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="65dp"
+        android:gravity="center"
+        android:text="@string/version_name"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -28,5 +28,7 @@
 
         <activity android:name=".ConnectionActivity" />
 
+        <activity android:name=".AboutActivity" />
+
     </application>
 </manifest>
