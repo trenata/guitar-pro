@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import androidx.viewpager.widget.PagerAdapter;
 
-public class CustomPagerAdapter extends PagerAdapter {
+public class OnboardingPagerAdapter extends PagerAdapter {
 
     private String[] titles;
     private String[] descriptions;
@@ -21,15 +21,15 @@ public class CustomPagerAdapter extends PagerAdapter {
     };
     private LayoutInflater inflater;
 
-    CustomPagerAdapter(Context context) {
+    OnboardingPagerAdapter(Context context) {
         inflater = LayoutInflater.from(context);
-        titles = context.getResources().getStringArray(R.array.titles);
-        descriptions = context.getResources().getStringArray(R.array.descriptions);
+        titles = context.getResources().getStringArray(R.array.titles_onboarding);
+        descriptions = context.getResources().getStringArray(R.array.descriptions_onboarding);
     }
 
     @Override
     public Object instantiateItem(ViewGroup collection, int position) {
-        ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.view_page, collection, false);
+        ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.onboarding, collection, false);
         TextView title = layout.findViewById(R.id.title);
         TextView description = layout.findViewById(R.id.description);
         ImageView image = layout.findViewById(R.id.background_image);

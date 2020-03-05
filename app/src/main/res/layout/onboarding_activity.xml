@@ -4,12 +4,12 @@
     android:layout_height="match_parent">
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
+        android:id="@+id/view_pager_onboarding"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <com.rd.PageIndicatorView
-        android:id="@+id/page_indicator_view"
+        android:id="@+id/page_indicator_view_onboarding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/first_keyline"

@@ -42,6 +42,16 @@ public class MoreFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        TextView first_textview = view.findViewById(R.id.first_time_user_experience);
+        first_textview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),
+                        FirstTimeUserExperienceActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 }

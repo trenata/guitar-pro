@@ -26,6 +26,10 @@
             android:name=".OnboardingActivity"
             android:theme="@style/AppTheme.Onboarding" />
 
+        <activity
+            android:name=".FirstTimeUserExperienceActivity"
+            android:theme="@style/AppTheme.Onboarding" />
+
         <activity android:name=".ConnectionActivity" />
 
         <activity android:name=".AboutActivity" />

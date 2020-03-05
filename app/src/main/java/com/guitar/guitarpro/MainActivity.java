@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             loadFragment(new MoreFragment());
             navigation.setSelectedItemId(R.id.settings);
 
+            startActivity(new Intent(this, FirstTimeUserExperienceActivity.class));
             startActivity(new Intent(this, OnboardingActivity.class));
         } else {
             int id = 0;
