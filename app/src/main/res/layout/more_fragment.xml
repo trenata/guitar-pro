@@ -13,14 +13,13 @@
         android:layout_height="70dp"
         android:layout_marginVertical="1dp"
         android:background="@color/colorMoreScreen"
-        android:gravity="center"
+        android:gravity="center|start"
         android:padding="20dp"
         android:text="@string/dark_mode"
-        android:textAlignment="textStart"
         android:textAllCaps="true"
         android:textColor="@color/white"
 
-        app:layout_constraintBottom_toTopOf="@+id/see_onboarding"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -28,6 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingEnd="10dp"
+        android:paddingStart="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/dark_mode"
         app:layout_constraintEnd_toEndOf="@+id/dark_mode"
         app:layout_constraintTop_toTopOf="@+id/dark_mode" />
@@ -38,13 +38,13 @@
         android:layout_height="70dp"
         android:layout_marginVertical="1dp"
         android:background="@color/colorMoreScreen"
-        android:gravity="center"
+        android:gravity="center|start"
         android:padding="20dp"
         android:text="@string/see_onboarding"
         android:textAlignment="textStart"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/first_time_user_experience"
+        app:layout_constraintTop_toBottomOf="@id/dark_mode"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -54,18 +54,14 @@
         android:layout_height="70dp"
         android:layout_marginVertical="1dp"
         android:background="@color/colorMoreScreen"
-        android:gravity="center"
+        android:gravity="center|start"
         android:padding="20dp"
         android:text="@string/first_time_user_expreience"
-        android:textAlignment="textStart"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.328" />
+        app:layout_constraintTop_toBottomOf="@id/see_onboarding" />
 
     <TextView
         android:id="@+id/about"
@@ -73,15 +69,14 @@
         android:layout_height="70dp"
         android:layout_marginVertical="1dp"
         android:background="@color/colorMoreScreen"
-        android:gravity="center"
+        android:gravity="center|start"
         android:padding="20dp"
         android:text="@string/about_button"
-        android:textAlignment="textStart"
         android:textAllCaps="true"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/first_time_user_experience" />
+        app:layout_constraintTop_toBottomOf="@id/first_time_user_experience" />
 
     <TextView
         android:id="@+id/share"
@@ -89,10 +84,9 @@
         android:layout_height="70dp"
         android:layout_marginVertical="1dp"
         android:background="@color/colorMoreScreen"
-        android:gravity="center"
+        android:gravity="center|start"
         android:padding="20dp"
         android:text="@string/share"
-        android:textAlignment="textStart"
         android:textAllCaps="true"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,7 +96,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="65dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:text="@string/version_name"
         app:layout_constraintBottom_toBottomOf="parent" />
