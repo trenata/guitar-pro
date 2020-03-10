@@ -131,4 +131,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         startActivity(intent);
     }
+
+    public void openFingerPlacementActivity(View view) {
+        Intent intent = new Intent(this, FingerPlacementActivity.class);
+
+        startActivity(intent);
+    }
 }
