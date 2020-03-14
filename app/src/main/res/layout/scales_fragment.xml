@@ -1,12 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/circle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/scales" />
+        android:layout_marginTop="176dp"
+        android:layout_marginBottom="272dp"
+        android:src="@drawable/ic_circle_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <CheckedTextView
+        android:id="@+id/keyC"
+        style="@style/Chord"
+        android:layout_width="54dp"
+        android:layout_height="32dp"
+        android:text="@string/chordC"
+        app:layout_constraintCircle="@id/circle"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="134dp"
+        tools:ignore="MissingConstraints" />
+
+    <CheckedTextView
+        android:id="@+id/keyD"
+        style="@style/Chord"
+        android:layout_width="54dp"
+        android:layout_height="32dp"
+        android:text="@string/chordD"
+        app:layout_constraintCircle="@id/circle"
+        app:layout_constraintCircleAngle="51"
+        app:layout_constraintCircleRadius="134dp"
+        tools:ignore="MissingConstraints" />
+
+    <CheckedTextView
+        android:id="@+id/keyE"
+        style="@style/Chord"
+        android:layout_width="54dp"
+        android:layout_height="32dp"
+        android:text="@string/chordE"
+        app:layout_constraintCircle="@id/circle"
+        app:layout_constraintCircleAngle="102"
+        app:layout_constraintCircleRadius="134dp"
+        tools:ignore="MissingConstraints" />
+
+    <CheckedTextView
+        android:id="@+id/keyF"
+        style="@style/Chord"
+        android:layout_width="54dp"
+        android:layout_height="32dp"
+        android:text="@string/chordF"
+        app:layout_constraintCircle="@id/circle"
+        app:layout_constraintCircleAngle="153"
+        app:layout_constraintCircleRadius="134dp"
+        tools:ignore="MissingConstraints" />
+
+    <CheckedTextView
+        android:id="@+id/keyG"
+        style="@style/Chord"
+        android:layout_width="54dp"
+        android:layout_height="32dp"
+        android:text="@string/chordG"
+        app:layout_constraintCircle="@id/circle"
+        app:layout_constraintCircleAngle="205"
+        app:layout_constraintCircleRadius="134dp"
+        tools:ignore="MissingConstraints" />
+
+    <CheckedTextView
+        android:id="@+id/keyH"
+        style="@style/Chord"
+        android:layout_width="54dp"
+        android:layout_height="32dp"
+        android:text="@string/chordH"
+        app:layout_constraintCircle="@id/circle"
+        app:layout_constraintCircleAngle="257"
+        app:layout_constraintCircleRadius="134dp"
+        tools:ignore="MissingConstraints" />
+
+    <CheckedTextView
+        android:id="@+id/keyA"
+        style="@style/Chord"
+        android:layout_width="54dp"
+        android:layout_height="32dp"
+        android:text="@string/chordA"
+        app:layout_constraintCircle="@id/circle"
+        app:layout_constraintCircleAngle="307"
+        app:layout_constraintCircleRadius="134dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/scales_screen_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/scales_screen_text_view"
+        android:textColor="@color/lightBlack"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/keyG" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/scale_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scales_screen_text" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,6 +49,8 @@
     <string name="chordA">A</string>
 
     <string name="chords_screen_text_view">Chords</string>
+    <string name="scales_screen_text_view">Scales</string>
+
 
     <string name="disconnected_title">Pair your device</string>
     <string name="disconnected_description">Make sure to turn on your Arduino.\nOnce it’s done, you can initialise the connection.</string>
